@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Advanced CSS Selectors</h1>
+
+    <!-- Complex Selectors -->
+    <h2>1. Complex Selector Combinations</h2>
+
+    <div class="container">
+      <div class="card featured">
+        <h3>Featured Card</h3>
+        <p>This is a featured card with special styling.</p>
+        <button class="btn primary">Primary Button</button>
+      </div>
+
+      <div class="card">
+        <h3>Regular Card</h3>
+        <p>This is a regular card.</p>
+        <button class="btn secondary">Secondary Button</button>
+      </div>
+
+      <div class="card disabled">
+        <h3>Disabled Card</h3>
+        <p>This card is disabled.</p>
+        <button class="btn" disabled>Disabled Button</button>
+      </div>
+    </div>
+
+    <!-- Grouping Selectors -->
+    <h2>2. Grouping Selectors</h2>
+
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <!-- Multiple Classes -->
+    <h2>3. Multiple Class Selectors</h2>
+
+    <div class="alert success">Success Alert</div>
+    <div class="alert warning">Warning Alert</div>
+    <div class="alert error">Error Alert</div>
+    <div class="alert info dismissible">Dismissible Info Alert</div>
+
+    <!-- Specificity Examples -->
+    <h2>4. CSS Specificity Examples</h2>
+
+    <div id="special-content">
+      <p class="important">Important paragraph in special content</p>
+      <p>Regular paragraph in special content</p>
+    </div>
+
+    <div class="content">
+      <p class="important">Important paragraph in regular content</p>
+      <p>Regular paragraph in regular content</p>
+    </div>
+
+    <!-- Dynamic Selectors -->
+    <h2>5. Dynamic Selectors</h2>
+
+    <div class="interactive-list">
+      <div class="item" tabindex="0">Focus-able item 1</div>
+      <div class="item" tabindex="0">Focus-able item 2</div>
+      <div class="item" tabindex="0">Focus-able item 3</div>
+    </div>
+
+    <!-- Form Advanced Selectors -->
+    <h2>6. Advanced Form Selectors</h2>
+
+    <form class="advanced-form">
+      <div class="form-row">
+        <input
+          type="text"
+          placeholder="Valid after 3 characters"
+          minlength="3"
+        />
+        <input type="email" placeholder="Required email" required />
+      </div>
+
+      <div class="form-row">
+        <input type="number" placeholder="Between 1-100" min="1" max="100" />
+        <input
+          type="text"
+          placeholder="Pattern: ABC-123"
+          pattern="[A-Z]{3}-[0-9]{3}"
+        />
+      </div>
+
+      <div class="form-row">
+        <input type="radio" name="option" id="opt1" value="1" />
+        <label for="opt1">Option 1</label>
+        <input type="radio" name="option" id="opt2" value="2" />
+        <label for="opt2">Option 2</label>
+      </div>
+
+      <div class="form-row">
+        <select>
+          <option value="">Choose option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+      </div>
+    </form>
+
+    <!-- Table Selectors -->
+    <h2>7. Table Selectors</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>25</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>30</td>
+          <td>Inactive</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>35</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Alice</td>
+          <td>28</td>
+          <td>Pending</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Negation Selectors -->
+    <h2>8. Negation Selectors</h2>
+
+    <div class="grid">
+      <div class="item">Regular item</div>
+      <div class="item special">Special item</div>
+      <div class="item">Another regular item</div>
+      <div class="item featured">Featured item</div>
+      <div class="item">Last regular item</div>
+    </div>
+
+    <!-- Practical Real-world Examples -->
+    <h2>9. Real-world Examples</h2>
+
+    <h3>Navigation Menu</h3>
+    <nav class="main-nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <h3>Card Layout</h3>
+    <div class="card-grid">
+      <article class="card premium">
+        <h4>Premium Plan</h4>
+        <p class="price">$99/month</p>
+        <ul class="features">
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+        </ul>
+        <button class="btn cta">Choose Plan</button>
+      </article>
+
+      <article class="card">
+        <h4>Basic Plan</h4>
+        <p class="price">$29/month</p>
+        <ul class="features">
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+        </ul>
+        <button class="btn">Choose Plan</button>
+      </article>
+    </div>
+  </body>
+</html>

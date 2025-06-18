@@ -1,0 +1,126 @@
+/* Basic CSS Selectors Examples */
+
+/* 1. ELEMENT SELECTORS - Select all elements of a specific type */
+/* Syntax: elementName { } */
+
+p {
+    color: blue;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+div {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+}
+
+/* 2. CLASS SELECTORS - Select elements with specific class */
+/* Syntax: .className { } */
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.box {
+    border: 2px solid red;
+    background-color: pink;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* 3. ID SELECTORS - Select element with specific ID */
+/* Syntax: #idName { } */
+
+#special {
+    color: purple;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+#header {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 4. UNIVERSAL SELECTOR - Select ALL elements */
+/* Syntax: * { } */
+
+* {
+    /* This applies to every element on the page */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+/* 5. ATTRIBUTE SELECTORS - Select elements based on attributes */
+/* Syntax: [attribute] or [attribute="value"] */
+
+/* Select all input elements with type="text" */
+input[type="text"] {
+    background-color: lightblue;
+    border: 2px solid blue;
+    padding: 8px;
+    margin: 5px;
+}
+
+/* Select all input elements with type="email" */
+input[type="email"] {
+    background-color: lightgreen;
+    border: 2px solid green;
+    padding: 8px;
+    margin: 5px;
+}
+
+/* Select all links with title attribute */
+a[title] {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Select links that start with "https" */
+a[href^="https"] {
+    color: red;
+}
+
+/* Select links that contain "#" (internal links) */
+a[href*="#"] {
+    color: purple;
+}
+
+/* 6. MULTIPLE SELECTORS - Apply same styles to multiple elements */
+/* Syntax: selector1, selector2 { } */
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+}
+
+/* 7. COMBINING CLASSES - Element must have both classes */
+/* Syntax: .class1.class2 { } (no space between classes) */
+
+.box.highlight {
+    border: 3px solid orange;
+    background-color: lightyellow;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+} 

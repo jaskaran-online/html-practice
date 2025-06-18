@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Combinators</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Combinators</h1>
+    <p class="intro">
+      Combinators explain the relationship between selectors and allow you to
+      combine them to target specific elements.
+    </p>
+
+    <!-- Descendant Combinator -->
+    <h2>1. Descendant Combinator (Space)</h2>
+    <p class="description">
+      Selects all elements that are descendants of a specified element.
+    </p>
+    <p class="syntax">
+      <strong>Syntax:</strong> <code>ancestor descendant</code>
+    </p>
+
+    <div class="example-container">
+      <h3>Example HTML:</h3>
+      <div class="html-example">
+        <div class="parent">
+          <p>This paragraph is inside a div</p>
+          <section>
+            <p>This paragraph is inside a section, inside a div</p>
+          </section>
+          <span>This span is also inside the div</span>
+        </div>
+        <p>This paragraph is outside the div</p>
+      </div>
+    </div>
+
+    <!-- Child Combinator -->
+    <h2>2. Child Combinator (>)</h2>
+    <p class="description">
+      Selects all elements that are direct children of a specified element.
+    </p>
+    <p class="syntax"><strong>Syntax:</strong> <code>parent > child</code></p>
+
+    <div class="example-container">
+      <h3>Example HTML:</h3>
+      <ul class="menu">
+        <li>Direct child item 1</li>
+        <li>
+          Direct child item 2
+          <ul>
+            <li>Nested child item 1</li>
+            <li>Nested child item 2</li>
+          </ul>
+        </li>
+        <li>Direct child item 3</li>
+      </ul>
+    </div>
+
+    <!-- Adjacent Sibling Combinator -->
+    <h2>3. Adjacent Sibling Combinator (+)</h2>
+    <p class="description">
+      Selects the first element that is immediately after another specific
+      element.
+    </p>
+    <p class="syntax">
+      <strong>Syntax:</strong>
+      <code>element + immediately-following-sibling</code>
+    </p>
+
+    <div class="example-container">
+      <h3>Example HTML:</h3>
+      <div class="siblings-demo">
+        <h4>Main Heading</h4>
+        <p>This paragraph immediately follows the h4</p>
+        <p>This paragraph does not immediately follow the h4</p>
+        <div>This div comes after the paragraphs</div>
+      </div>
+    </div>
+
+    <!-- General Sibling Combinator -->
+    <h2>4. General Sibling Combinator (~)</h2>
+    <p class="description">
+      Selects all elements that are siblings after a specified element.
+    </p>
+    <p class="syntax">
+      <strong>Syntax:</strong> <code>element ~ following-siblings</code>
+    </p>
+
+    <div class="example-container">
+      <h3>Example HTML:</h3>
+      <div class="general-siblings">
+        <h4>Reference Heading</h4>
+        <p>First sibling paragraph</p>
+        <div>A div sibling</div>
+        <p>Second sibling paragraph</p>
+        <span>A span sibling</span>
+        <p>Third sibling paragraph</p>
+      </div>
+    </div>
+
+    <!-- Practical Examples -->
+    <h2>5. Practical Examples</h2>
+
+    <h3>Navigation Menu Example</h3>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a href="#services">Services</a>
+          <ul class="dropdown">
+            <li><a href="#web">Web Design</a></li>
+            <li><a href="#app">App Development</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h3>Article Layout Example</h3>
+    <article class="blog-post">
+      <h4>Article Title</h4>
+      <p class="intro-paragraph">
+        This is the introduction paragraph that comes right after the title.
+      </p>
+      <p>This is a regular paragraph in the article.</p>
+      <blockquote>This is a quote within the article.</blockquote>
+      <p>This paragraph comes after the blockquote.</p>
+      <p>This is another regular paragraph.</p>
+    </article>
+
+    <h3>Form Layout Example</h3>
+    <form class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Comparison Section -->
+    <h2>6. Combinator Comparison</h2>
+    <div class="comparison-container">
+      <div class="comparison-item">
+        <h4>Descendant (space)</h4>
+        <p><code>div p</code></p>
+        <p>All paragraphs inside any div (any level deep)</p>
+      </div>
+
+      <div class="comparison-item">
+        <h4>Child (>)</h4>
+        <p><code>div > p</code></p>
+        <p>Only paragraphs that are direct children of div</p>
+      </div>
+
+      <div class="comparison-item">
+        <h4>Adjacent (+)</h4>
+        <p><code>h3 + p</code></p>
+        <p>Only the first paragraph immediately after h3</p>
+      </div>
+
+      <div class="comparison-item">
+        <h4>General Sibling (~)</h4>
+        <p><code>h3 ~ p</code></p>
+        <p>All paragraphs that are siblings after h3</p>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tips-section">
+      <h2>💡 Tips for Using Combinators</h2>
+      <ul>
+        <li>
+          <strong>Descendant combinator</strong> is the most commonly used -
+          great for styling content within containers
+        </li>
+        <li>
+          <strong>Child combinator</strong> is useful when you want to be
+          specific about direct relationships
+        </li>
+        <li>
+          <strong>Adjacent sibling</strong> is perfect for styling elements that
+          immediately follow others (like first paragraphs after headings)
+        </li>
+        <li>
+          <strong>General sibling</strong> is less common but useful for styling
+          all elements of a type that come after a reference element
+        </li>
+        <li>
+          You can chain combinators: <code>article > h2 + p</code> selects
+          paragraphs that immediately follow h2 elements that are direct
+          children of articles
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

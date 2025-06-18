@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Pseudo-Elements</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Pseudo-Elements</h1>
+
+    <!-- ::before and ::after -->
+    <h2>1. ::before and ::after Pseudo-elements</h2>
+    <div class="quote">
+      This text will have decorative elements added before and after it using
+      pseudo-elements.
+    </div>
+
+    <div class="icon-text">Home</div>
+    <div class="icon-text">About</div>
+    <div class="icon-text">Contact</div>
+
+    <!-- ::first-line -->
+    <h2>2. ::first-line Pseudo-element</h2>
+    <p class="article">
+      This is the first line of the paragraph that will be styled differently.
+      This is the second line and the rest of the text will have normal styling.
+      You can see how only the first line gets special formatting while the rest
+      remains unchanged. This is very useful for creating magazine-style
+      layouts.
+    </p>
+
+    <!-- ::first-letter -->
+    <h2>3. ::first-letter Pseudo-element</h2>
+    <p class="drop-cap">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. The first letter will be styled as a drop cap.
+    </p>
+
+    <!-- ::selection -->
+    <h2>4. ::selection Pseudo-element</h2>
+    <p class="selectable">
+      Try selecting this text with your mouse! You'll see custom selection
+      colors. The ::selection pseudo-element lets you style how selected text
+      appears.
+    </p>
+
+    <!-- ::placeholder -->
+    <h2>5. ::placeholder Pseudo-element</h2>
+    <input type="text" placeholder="This placeholder has custom styling" />
+    <textarea placeholder="This textarea placeholder is also styled"></textarea>
+
+    <!-- Practical Examples -->
+    <h2>6. Practical Examples</h2>
+
+    <h3>Tooltip Example</h3>
+    <div class="tooltip" data-tooltip="This is a tooltip created with ::before">
+      Hover over me for a tooltip
+    </div>
+
+    <h3>Counter Example</h3>
+    <ol class="custom-counter">
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      <li>Fourth item</li>
+    </ol>
+
+    <h3>Card with Badge</h3>
+    <div class="card new">
+      <h4>Product Title</h4>
+      <p>This is a product card with a "NEW" badge created using ::before</p>
+    </div>
+
+    <h3>Decorative Heading</h3>
+    <h3 class="fancy-heading">Beautiful Heading</h3>
+  </body>
+</html>

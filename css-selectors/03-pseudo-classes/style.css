@@ -1,0 +1,229 @@
+/* CSS Pseudo-Classes Examples */
+/* Pseudo-classes select elements based on their state or position */
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: orange;
+}
+
+/* 1. INTERACTIVE PSEUDO-CLASSES */
+/* These respond to user interactions */
+
+/* :hover - Applies when user hovers over element */
+button:hover {
+    background-color: lightblue;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+button {
+    background-color: lightgray;
+    border: 2px solid gray;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* :focus - Applies when element has focus (like input fields) */
+input:focus {
+    background-color: lightyellow;
+    border: 2px solid orange;
+    outline: none;
+    box-shadow: 0 0 5px orange;
+}
+
+input {
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+/* :active - Applies when element is being clicked */
+.link:active {
+    background-color: red;
+    color: white;
+}
+
+.link:hover {
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+}
+
+.link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: lightblue;
+    color: darkblue;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.2s ease;
+}
+
+/* 2. STRUCTURAL PSEUDO-CLASSES */
+/* These select elements based on their position in the document */
+
+/* :first-child - Selects the first child element */
+.list li:first-child {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+/* :last-child - Selects the last child element */
+.list li:last-child {
+    background-color: lightcoral;
+    font-weight: bold;
+}
+
+.list li {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: lightgray;
+    border-radius: 4px;
+}
+
+/* :nth-child() - Selects elements based on their position */
+
+/* Select even-numbered items */
+.grid .item:nth-child(even) {
+    background-color: lightblue;
+}
+
+/* Select odd-numbered items */
+.grid .item:nth-child(odd) {
+    background-color: lightpink;
+}
+
+/* You can also use formulas like:
+   :nth-child(3n) - every 3rd element
+   :nth-child(2n+1) - every odd element (same as :nth-child(odd))
+*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.item {
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* 3. FORM PSEUDO-CLASSES */
+/* These work specifically with form elements */
+
+/* :required - Selects required form fields */
+input:required {
+    border-left: 4px solid red;
+}
+
+/* :optional - Selects optional form fields */
+input:optional:not(:focus) {
+    border-left: 4px solid green;
+}
+
+/* :disabled - Selects disabled form elements */
+input:disabled {
+    background-color: #f0f0f0;
+    color: gray;
+    cursor: not-allowed;
+}
+
+/* :checked - Selects checked checkboxes/radio buttons */
+input[type="checkbox"]:checked + label {
+    color: green;
+    font-weight: bold;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+/* 4. :not() PSEUDO-CLASS */
+/* Selects elements that DON'T match the selector inside parentheses */
+
+/* Select all paragraphs EXCEPT those with class "special" */
+.container p:not(.special) {
+    background-color: lightgray;
+    border-left: 4px solid gray;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.container p.special {
+    background-color: gold;
+    border-left: 4px solid orange;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* 5. :empty PSEUDO-CLASS */
+/* Selects elements that have no children (no text, no other elements) */
+
+.box:empty {
+    background-color: red;
+    border: 2px dashed darkred;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box:empty::after {
+    content: "This box is empty!";
+    color: white;
+    font-weight: bold;
+}
+
+.box {
+    background-color: lightblue;
+    border: 2px solid blue;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    min-height: 50px;
+}
+
+/* MORE STRUCTURAL PSEUDO-CLASSES */
+
+/* :first-of-type - First element of its type among siblings */
+/* :last-of-type - Last element of its type among siblings */
+/* :nth-of-type() - nth element of its type */
+
+/* Example: Make the first paragraph in each section bold */
+h2 + p:first-of-type {
+    font-weight: bold;
+    font-style: italic;
+} 

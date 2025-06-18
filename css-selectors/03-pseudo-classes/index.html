@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Pseudo-Classes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Pseudo-Classes</h1>
+
+    <!-- Interactive Pseudo-classes -->
+    <h2>1. Interactive Pseudo-classes</h2>
+    <button>Hover over me!</button>
+    <input type="text" placeholder="Focus on me!" />
+    <a href="#" class="link">Click and hold me!</a>
+
+    <!-- Structural Pseudo-classes -->
+    <h2>2. Structural Pseudo-classes</h2>
+
+    <h3>First and Last Child</h3>
+    <ul class="list">
+      <li>First item (first-child)</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      <li>Last item (last-child)</li>
+    </ul>
+
+    <h3>nth-child Examples</h3>
+    <div class="grid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2 (even)</div>
+      <div class="item">Item 3 (odd)</div>
+      <div class="item">Item 4 (even)</div>
+      <div class="item">Item 5 (odd)</div>
+      <div class="item">Item 6 (even)</div>
+    </div>
+
+    <!-- Form Pseudo-classes -->
+    <h2>3. Form Pseudo-classes</h2>
+    <form>
+      <div class="form-group">
+        <label>Required field:</label>
+        <input type="text" required />
+      </div>
+
+      <div class="form-group">
+        <label>Optional field:</label>
+        <input type="text" />
+      </div>
+
+      <div class="form-group">
+        <label>Disabled field:</label>
+        <input type="text" disabled value="Cannot edit" />
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="check1" />
+        <label for="check1">Check me!</label>
+      </div>
+    </form>
+
+    <!-- Not Pseudo-class -->
+    <h2>4. :not() Pseudo-class</h2>
+    <div class="container">
+      <p>Regular paragraph</p>
+      <p class="special">Special paragraph (excluded from :not)</p>
+      <p>Another regular paragraph</p>
+      <p>Yet another regular paragraph</p>
+    </div>
+
+    <!-- Empty Pseudo-class -->
+    <h2>5. :empty Pseudo-class</h2>
+    <div class="box">This box has content</div>
+    <div class="box"></div>
+    <div class="box">This box also has content</div>
+  </body>
+</html>

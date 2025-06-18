@@ -1,0 +1,400 @@
+/* Advanced CSS Attribute Selectors Examples */
+/* Attribute selectors target elements based on their attributes and values */
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    max-width: 900px;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+h3 {
+    color: orange;
+    margin-top: 30px;
+}
+
+/* 1. BASIC ATTRIBUTE SELECTORS */
+/* [attribute] - Selects elements that HAVE the specified attribute */
+
+[title] {
+    background-color: lightyellow;
+    border-left: 4px solid gold;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: help;
+}
+
+[data-info] {
+    background-color: lightblue;
+    border: 1px solid blue;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* 2. EXACT VALUE MATCHING */
+/* [attribute="value"] - Exact match of attribute value */
+
+input[type="text"] {
+    background-color: lightgreen;
+    border: 2px solid green;
+}
+
+input[type="email"] {
+    background-color: lightblue;
+    border: 2px solid blue;
+}
+
+input[type="password"] {
+    background-color: lightpink;
+    border: 2px solid red;
+}
+
+input[type="number"] {
+    background-color: lightyellow;
+    border: 2px solid orange;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 4px;
+    display: block;
+    width: 200px;
+}
+
+/* 3. CONTAINS WORD */
+/* [attribute~="value"] - Attribute contains the word (space-separated) */
+
+[class~="highlight"] {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+[class~="important"] {
+    color: red;
+    border: 2px solid red;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+[class~="special"] {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+/* 4. STARTS WITH */
+/* [attribute^="value"] - Attribute value starts with specified string */
+
+/* Style HTTPS links differently from HTTP */
+a[href^="https"] {
+    color: green;
+    font-weight: bold;
+}
+
+a[href^="https"]::before {
+    content: "🔒 "; /* Lock icon for secure links */
+}
+
+a[href^="http"]:not([href^="https"]) {
+    color: orange;
+}
+
+a[href^="http"]:not([href^="https"])::before {
+    content: "⚠️ "; /* Warning for non-secure links */
+}
+
+/* Email and phone links */
+a[href^="mailto"] {
+    color: blue;
+}
+
+a[href^="mailto"]::before {
+    content: "📧 ";
+}
+
+a[href^="tel"] {
+    color: purple;
+}
+
+a[href^="tel"]::before {
+    content: "📞 ";
+}
+
+a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 5. ENDS WITH */
+/* [attribute$="value"] - Attribute value ends with specified string */
+
+/* Style different file types */
+img[src$=".jpg"], img[src$=".jpeg"] {
+    border: 3px solid red;
+    background-color: #ffe6e6;
+}
+
+img[src$=".png"] {
+    border: 3px solid blue;
+    background-color: #e6f3ff;
+}
+
+img[src$=".gif"] {
+    border: 3px solid green;
+    background-color: #e6ffe6;
+}
+
+img[src$=".pdf"] {
+    border: 3px solid purple;
+    background-color: #f3e6ff;
+}
+
+img {
+    width: 100px;
+    height: 60px;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    object-fit: cover;
+}
+
+/* 6. CONTAINS SUBSTRING */
+/* [attribute*="value"] - Attribute contains substring anywhere */
+
+[data-category*="development"] {
+    background-color: #e6f7ff;
+    border-left: 4px solid #1890ff;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+[data-category*="design"] {
+    background-color: #fff7e6;
+    border-left: 4px solid #fa8c16;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+[data-category*="web"] {
+    font-weight: bold;
+}
+
+/* 7. LANGUAGE ATTRIBUTE MATCHING */
+/* [attribute|="value"] - Exact match or starts with value followed by hyphen */
+
+[lang|="en"] {
+    background-color: lightblue;
+    padding: 8px;
+    margin: 5px 0;
+    border-left: 4px solid blue;
+}
+
+[lang="fr"] {
+    background-color: lightpink;
+    padding: 8px;
+    margin: 5px 0;
+    border-left: 4px solid red;
+}
+
+[lang="es"] {
+    background-color: lightyellow;
+    padding: 8px;
+    margin: 5px 0;
+    border-left: 4px solid orange;
+}
+
+/* 8. CASE INSENSITIVE MATCHING */
+/* [attribute="value" i] - Case insensitive matching */
+
+[data-status="active" i] {
+    background-color: lightgreen;
+    color: darkgreen;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid green;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+[data-status="inactive" i] {
+    background-color: lightgray;
+    color: gray;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+
+/* 9. PRACTICAL EXAMPLES */
+
+/* Form Validation Styling */
+input[required] {
+    border-left: 4px solid red;
+}
+
+input[required]:valid {
+    border-left: 4px solid green;
+}
+
+input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+input[type="checkbox"]:checked + label {
+    color: green;
+    font-weight: bold;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+form input {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+/* Download Links Styling */
+a[download] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+a[download]:hover {
+    background-color: #45a049;
+}
+
+/* Add file type icons to download links */
+a[href$=".pdf"][download]::before {
+    content: "📄 ";
+}
+
+a[href$=".xlsx"][download]::before,
+a[href$=".xls"][download]::before {
+    content: "📊 ";
+}
+
+a[href$=".pptx"][download]::before,
+a[href$=".ppt"][download]::before {
+    content: "📽️ ";
+}
+
+a[href$=".zip"][download]::before {
+    content: "📦 ";
+}
+
+/* External Links */
+a[href^="https"]:not([href*="localhost"]):not([href*="127.0.0.1"]) {
+    color: #1890ff;
+}
+
+a[target="_blank"]::after {
+    content: " 🔗";
+    font-size: 0.8em;
+}
+
+/* Custom Data Attributes for Priority */
+[data-priority="high"] {
+    background-color: #ffebee;
+    border-left: 4px solid #f44336;
+}
+
+[data-priority="medium"] {
+    background-color: #fff3e0;
+    border-left: 4px solid #ff9800;
+}
+
+[data-priority="low"] {
+    background-color: #e8f5e8;
+    border-left: 4px solid #4caf50;
+}
+
+[data-priority][data-urgency="critical"] {
+    animation: pulse 1s infinite;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+[data-priority] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* Button Combinations */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type="submit"][disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+button[type="button"][class="primary"] {
+    background-color: #2196F3;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover:not([disabled]) {
+    opacity: 0.8;
+}
+
+/* COMBINING MULTIPLE ATTRIBUTE SELECTORS */
+/* You can chain multiple attribute selectors */
+
+input[type="email"][required] {
+    border: 2px solid purple;
+    background-color: #faf0ff;
+} 

@@ -1,0 +1,337 @@
+/* CSS Pseudo-Elements Examples */
+/* Pseudo-elements create virtual elements that don't exist in HTML */
+/* NOTE: Use :: (double colon) for pseudo-elements, : (single colon) for pseudo-classes */
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+h3 {
+    color: orange;
+    margin-top: 30px;
+}
+
+/* 1. ::before AND ::after PSEUDO-ELEMENTS */
+/* These create virtual elements before/after the element's content */
+/* IMPORTANT: They require the 'content' property to work! */
+
+.quote::before {
+    content: """; /* Opening quote */
+    font-size: 2em;
+    color: blue;
+    font-weight: bold;
+}
+
+.quote::after {
+    content: """; /* Closing quote */
+    font-size: 2em;
+    color: blue;
+    font-weight: bold;
+}
+
+.quote {
+    background-color: lightblue;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid blue;
+    font-style: italic;
+    position: relative;
+}
+
+/* Adding icons with ::before */
+.icon-text::before {
+    content: "🏠 "; /* Unicode emoji */
+    margin-right: 5px;
+}
+
+.icon-text:nth-child(4)::before { /* Home */
+    content: "🏠 ";
+}
+
+.icon-text:nth-child(5)::before { /* About */
+    content: "ℹ️ ";
+}
+
+.icon-text:nth-child(6)::before { /* Contact */
+    content: "📞 ";
+}
+
+.icon-text {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: inline-block;
+    min-width: 100px;
+}
+
+/* 2. ::first-line PSEUDO-ELEMENT */
+/* Styles only the first line of text in a block element */
+
+.article::first-line {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.article {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* 3. ::first-letter PSEUDO-ELEMENT */
+/* Styles only the first letter of the first line */
+
+.drop-cap::first-letter {
+    font-size: 3em;
+    font-weight: bold;
+    color: darkred;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    margin-top: 2px;
+    font-family: Georgia, serif;
+}
+
+.drop-cap {
+    background-color: #fff8f0;
+    padding: 20px;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+/* 4. ::selection PSEUDO-ELEMENT */
+/* Styles the portion of text selected by the user */
+
+.selectable::selection {
+    background-color: yellow;
+    color: red;
+}
+
+/* For Firefox compatibility */
+.selectable::-moz-selection {
+    background-color: yellow;
+    color: red;
+}
+
+.selectable {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    margin: 20px 0;
+    user-select: text; /* Ensure text is selectable */
+}
+
+/* 5. ::placeholder PSEUDO-ELEMENT */
+/* Styles placeholder text in input elements */
+
+input::placeholder {
+    color: purple;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+textarea::placeholder {
+    color: green;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px 5px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+}
+
+input:focus, textarea:focus {
+    border-color: blue;
+    outline: none;
+}
+
+/* 6. PRACTICAL EXAMPLES */
+
+/* Tooltip using ::before */
+.tooltip {
+    position: relative;
+    background-color: lightblue;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip); /* Gets content from data-tooltip attribute */
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Arrow for tooltip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Custom Counter */
+.custom-counter {
+    counter-reset: item-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-counter li {
+    counter-increment: item-counter;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 60px;
+}
+
+.custom-counter li::before {
+    content: counter(item-counter);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: blue;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Card with Badge */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card.new::before {
+    content: "NEW";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Decorative Heading */
+.fancy-heading {
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+    color: #333;
+}
+
+.fancy-heading::before,
+.fancy-heading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 2px;
+    background-color: gold;
+}
+
+.fancy-heading::before {
+    left: -120px;
+}
+
+.fancy-heading::after {
+    right: -120px;
+}
+
+/* Another decorative example with symbols */
+.fancy-heading::before {
+    content: "✨";
+    left: -30px;
+    width: auto;
+    height: auto;
+    background: none;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fancy-heading::after {
+    content: "✨";
+    right: -30px;
+    width: auto;
+    height: auto;
+    background: none;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+} 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Attribute Selectors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Attribute Selectors</h1>
+
+    <!-- Basic Attribute Selectors -->
+    <h2>1. Basic Attribute Selectors</h2>
+
+    <h3>Elements with specific attributes</h3>
+    <div title="I have a title">Element with title attribute</div>
+    <div>Element without title attribute</div>
+    <div data-info="some info">Element with data-info attribute</div>
+
+    <!-- Exact Value Matching -->
+    <h2>2. Exact Value Matching [attribute="value"]</h2>
+
+    <input type="text" placeholder="Text input" />
+    <input type="email" placeholder="Email input" />
+    <input type="password" placeholder="Password input" />
+    <input type="number" placeholder="Number input" />
+
+    <!-- Contains Word -->
+    <h2>3. Contains Word [attribute~="value"]</h2>
+
+    <div class="highlight important">Both highlight and important</div>
+    <div class="highlight">Only highlight</div>
+    <div class="important">Only important</div>
+    <div class="highlight special important">Three classes</div>
+
+    <!-- Starts With -->
+    <h2>4. Starts With [attribute^="value"]</h2>
+
+    <a href="https://google.com">HTTPS Link to Google</a>
+    <a href="http://example.com">HTTP Link to Example</a>
+    <a href="mailto:test@email.com">Email Link</a>
+    <a href="tel:+1234567890">Phone Link</a>
+
+    <!-- Ends With -->
+    <h2>5. Ends With [attribute$="value"]</h2>
+
+    <img src="image1.jpg" alt="JPEG Image" />
+    <img src="image2.png" alt="PNG Image" />
+    <img src="image3.gif" alt="GIF Image" />
+    <img src="document.pdf" alt="PDF Document" />
+
+    <!-- Contains Substring -->
+    <h2>6. Contains Substring [attribute*="value"]</h2>
+
+    <div data-category="web-development">Web Development</div>
+    <div data-category="mobile-development">Mobile Development</div>
+    <div data-category="game-development">Game Development</div>
+    <div data-category="web-design">Web Design</div>
+
+    <!-- Language Attribute -->
+    <h2>7. Language Attribute [attribute|="value"]</h2>
+
+    <p lang="en">English text</p>
+    <p lang="en-US">American English text</p>
+    <p lang="en-GB">British English text</p>
+    <p lang="fr">French text</p>
+    <p lang="es">Spanish text</p>
+
+    <!-- Case Insensitive -->
+    <h2>8. Case Insensitive [attribute="value" i]</h2>
+
+    <div data-status="ACTIVE">Status: ACTIVE (uppercase)</div>
+    <div data-status="active">Status: active (lowercase)</div>
+    <div data-status="Active">Status: Active (mixed case)</div>
+    <div data-status="inactive">Status: inactive</div>
+
+    <!-- Practical Examples -->
+    <h2>9. Practical Examples</h2>
+
+    <h3>Form Validation Styling</h3>
+    <form>
+      <input type="email" required placeholder="Required email" />
+      <input type="text" optional placeholder="Optional field" />
+      <input type="text" readonly value="Read-only field" />
+      <input type="checkbox" id="terms" />
+      <label for="terms">I agree to terms</label>
+    </form>
+
+    <h3>Download Links</h3>
+    <a href="document.pdf" download>Download PDF</a>
+    <a href="spreadsheet.xlsx" download>Download Excel</a>
+    <a href="presentation.pptx" download>Download PowerPoint</a>
+    <a href="archive.zip" download>Download ZIP</a>
+
+    <h3>External vs Internal Links</h3>
+    <a href="#section1">Internal link</a>
+    <a href="https://external-site.com" target="_blank">External link</a>
+    <a href="https://another-external.com" rel="noopener">Another external</a>
+
+    <h3>Custom Data Attributes</h3>
+    <div data-priority="high" data-urgency="critical">
+      High Priority Critical
+    </div>
+    <div data-priority="medium" data-urgency="normal">
+      Medium Priority Normal
+    </div>
+    <div data-priority="low" data-urgency="normal">Low Priority Normal</div>
+
+    <h3>Multiple Attribute Combinations</h3>
+    <button type="submit" disabled>Disabled Submit</button>
+    <button type="button" class="primary">Primary Button</button>
+    <button type="reset" class="secondary">Reset Button</button>
+  </body>
+</html>
