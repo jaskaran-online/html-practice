@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice: Style a Blog Post</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="practice-header">
+        <a href="../index.html" class="back-link">← Back to Practice Hub</a>
+        <h1>🎨 Practice: Style a Blog Post</h1>
+        <p class="difficulty-badge beginner">Beginner Level</p>
+      </header>
+
+      <div class="challenge-info">
+        <h2>📋 Your Challenge</h2>
+        <p>
+          Style the blog post below using <strong>basic CSS selectors</strong>.
+          Your goal is to create a clean, readable blog layout.
+        </p>
+
+        <div class="requirements">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>
+              Style the main heading with a larger font size and different color
+            </li>
+            <li>Make the author info stand out with styling</li>
+            <li>Style paragraphs for better readability</li>
+            <li>Create visual hierarchy with different heading sizes</li>
+            <li>Style the image and caption</li>
+            <li>Add hover effects to links</li>
+            <li>Style the tags list</li>
+          </ul>
+        </div>
+
+        <div class="selectors-to-practice">
+          <h3>🎯 Selectors to Practice:</h3>
+          <div class="selector-list">
+            <code>h1, h2, h3</code>
+            <code>.class-name</code>
+            <code>#unique-id</code>
+            <code>p</code>
+            <code>img</code>
+            <code>a</code>
+            <code>ul, li</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Post Content to Style -->
+      <article class="blog-post">
+        <header class="post-header">
+          <h1 id="main-title">
+            The Art of CSS Selectors: A Developer's Journey
+          </h1>
+          <div class="author-info">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+              alt="Author"
+              class="author-avatar"
+            />
+            <div class="author-details">
+              <p class="author-name">Alex Johnson</p>
+              <p class="publish-date">March 15, 2024</p>
+            </div>
+          </div>
+        </header>
+
+        <div class="post-content">
+          <p class="intro-paragraph">
+            Learning CSS selectors is like learning a new language - one that
+            allows you to communicate directly with the visual elements of the
+            web. In this article, we'll explore the fundamental concepts that
+            every developer should master.
+          </p>
+
+          <figure class="post-image">
+            <img
+              src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop"
+              alt="Developer coding"
+            />
+            <figcaption>A developer working on CSS selectors</figcaption>
+          </figure>
+
+          <h2>Understanding the Basics</h2>
+          <p>
+            CSS selectors are patterns used to select the elements you want to
+            style. They are the bridge between your HTML structure and your
+            visual design. Without selectors, CSS would be powerless to
+            transform the appearance of web pages.
+          </p>
+
+          <p>
+            The most fundamental selectors include element selectors (like
+            <code>p</code> for paragraphs), class selectors (like
+            <code>.highlight</code>), and ID selectors (like
+            <code>#header</code>). Each serves a specific purpose in the styling
+            hierarchy.
+          </p>
+
+          <h3>Element Selectors</h3>
+          <p>
+            Element selectors target HTML tags directly. When you write
+            <code>h1 { color: blue; }</code>, you're telling the browser to make
+            all h1 elements blue. It's simple, direct, and powerful.
+          </p>
+
+          <h3>Class Selectors</h3>
+          <p class="highlight-text">
+            Class selectors are incredibly versatile. They allow you to apply
+            styles to multiple elements that share a common class attribute.
+            This paragraph has a "highlight-text" class that you can style!
+          </p>
+
+          <h3>ID Selectors</h3>
+          <p>
+            ID selectors are unique identifiers. Each ID should only appear once
+            per page, making them perfect for styling specific, unique elements
+            like headers or main content areas.
+          </p>
+
+          <blockquote class="quote">
+            "CSS is not just about making things look pretty. It's about
+            creating experiences that are intuitive, accessible, and delightful
+            for users."
+          </blockquote>
+
+          <h2>Best Practices</h2>
+          <p>As you develop your CSS skills, remember these key principles:</p>
+
+          <ul class="best-practices">
+            <li>Keep your selectors simple and readable</li>
+            <li>Use classes for reusable styles</li>
+            <li>Reserve IDs for unique elements</li>
+            <li>Consider specificity when writing selectors</li>
+            <li>Test your styles across different devices</li>
+          </ul>
+
+          <div class="call-to-action">
+            <h3>Ready to Practice?</h3>
+            <p>
+              Now it's your turn! Use the CSS file to style this blog post and
+              make it shine.
+            </p>
+            <a href="#" class="cta-button">Start Coding</a>
+          </div>
+        </div>
+
+        <footer class="post-footer">
+          <div class="tags">
+            <span class="tag-label">Tags:</span>
+            <ul class="tag-list">
+              <li class="tag">CSS</li>
+              <li class="tag">Web Development</li>
+              <li class="tag">Frontend</li>
+              <li class="tag">Selectors</li>
+            </ul>
+          </div>
+        </footer>
+      </article>
+
+      <div class="solution-hint">
+        <h3>💡 Hints</h3>
+        <details>
+          <summary>Click for styling hints</summary>
+          <ul>
+            <li>Use <code>#main-title</code> to style the main heading</li>
+            <li>Try <code>.author-info</code> for the author section</li>
+            <li>
+              Style <code>.intro-paragraph</code> differently from regular
+              paragraphs
+            </li>
+            <li>
+              Use <code>.highlight-text</code> to make that paragraph stand out
+            </li>
+            <li>Don't forget to style the <code>.quote</code> blockquote</li>
+            <li>Make the <code>.tag-list</code> display horizontally</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </body>
+</html>

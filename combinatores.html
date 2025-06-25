@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Descendant Combinator */
+      .parent1 p {
+        color: red;
+      }
+
+      /* Child Combinator */
+      .parent2 > p {
+        color: blue;
+      }
+
+      /* General Sibling Combinator */
+      .parent3 h1 + p {
+        color: yellow;
+      }
+
+      /* Adjacent Sibling Combinator */
+      .parent4 h1 ~ p {
+        color: green;
+      }
+      h2 {
+        border-bottom: 1px solid #000;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      form input {
+        display: block;
+        margin-bottom: 4px;
+        border: 2px solid red;
+        padding: 4px;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Descendant Combinator</h2>
+    <!-- Descendant Combinator -->
+    <div class="parent1">
+      <p>This is a paragraph inside a div</p>
+      <section>
+        <p>This is a paragraph inside a section, inside a div</p>
+      </section>
+      <span>This is a span inside a div</span>
+      <p>This is a paragraph outside a div</p>
+    </div>
+
+    <h2>Child Combinator</h2>
+    <!-- Child Combinator -->
+    <div class="parent2">
+      <p>This is a paragraph inside a div</p>
+      <section>
+        <p>This is a paragraph inside a section, inside a div</p>
+      </section>
+      <p>This is a paragraph inside a div</p>
+      <p>This is a paragraph inside a div</p>
+    </div>
+
+    <h2>General Sibling Combinator</h2>
+    <!-- General Sibling Combinator -->
+    <div class="parent3">
+      <h1>This is a h1 inside a div</h1>
+      <p>This is a paragraph inside a div</p>
+      <p>This is a paragraph inside a div</p>
+    </div>
+
+    <h2>Adjacent Sibling Combinator</h2>
+    <!-- Adjacent Sibling Combinator -->
+    <div class="parent4">
+      <h1>This is a paragraph inside a div</h1>
+      <p>This is a paragraph inside a div</p>
+      <p>This is a paragraph inside a div</p>
+    </div>
+
+    <form action="">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice: Build a Navigation Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="practice-header">
+        <a href="../index.html" class="back-link">← Back to Practice Hub</a>
+        <h1>🏗️ Practice: Build a Navigation Menu</h1>
+        <p class="difficulty-badge beginner">Beginner Level</p>
+      </header>
+
+      <div class="challenge-info">
+        <h2>📋 Your Challenge</h2>
+        <p>
+          Create a responsive navigation menu using
+          <strong>combinators and pseudo-classes</strong>. Build both a
+          horizontal main nav and a dropdown submenu.
+        </p>
+
+        <div class="requirements">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Style the main navigation horizontally</li>
+            <li>Add hover effects to navigation links</li>
+            <li>Create a dropdown submenu for "Services"</li>
+            <li>Style the mobile menu toggle button</li>
+            <li>Use pseudo-classes for interactive states</li>
+            <li>Apply different styles for active/current page</li>
+            <li>Make it responsive for mobile devices</li>
+          </ul>
+        </div>
+
+        <div class="selectors-to-practice">
+          <h3>🎯 Selectors to Practice:</h3>
+          <div class="selector-list">
+            <code>nav ul li</code>
+            <code>nav > ul</code>
+            <code>li + li</code>
+            <code>a:hover</code>
+            <code>li:first-child</code>
+            <code>li:last-child</code>
+            <code>.active</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation to Style -->
+      <div class="demo-area">
+        <nav class="main-nav">
+          <div class="nav-brand">
+            <a href="#" class="logo">WebDev Co.</a>
+          </div>
+
+          <button class="mobile-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link">Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-link">Web Design</a></li>
+                <li><a href="#" class="dropdown-link">Development</a></li>
+                <li><a href="#" class="dropdown-link">SEO</a></li>
+                <li><a href="#" class="dropdown-link">Consulting</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link contact-btn">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Demo content to show navigation in context -->
+        <main class="demo-content">
+          <section class="hero-section">
+            <h1>Welcome to Our Website</h1>
+            <p>
+              This content shows how the navigation looks in context. Try
+              hovering over the menu items!
+            </p>
+          </section>
+
+          <section class="content-section">
+            <h2>Navigation Features to Style</h2>
+            <div class="feature-grid">
+              <div class="feature">
+                <h3>Horizontal Layout</h3>
+                <p>Make the main menu display horizontally across the page</p>
+              </div>
+              <div class="feature">
+                <h3>Hover Effects</h3>
+                <p>Add smooth hover transitions and color changes</p>
+              </div>
+              <div class="feature">
+                <h3>Dropdown Menu</h3>
+                <p>Create a submenu that appears on hover</p>
+              </div>
+              <div class="feature">
+                <h3>Active States</h3>
+                <p>Highlight the current page in the navigation</p>
+              </div>
+              <div class="feature">
+                <h3>Mobile Toggle</h3>
+                <p>Style the hamburger menu for mobile devices</p>
+              </div>
+              <div class="feature">
+                <h3>Responsive Design</h3>
+                <p>Adapt the navigation for different screen sizes</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div class="solution-hint">
+        <h3>💡 Hints</h3>
+        <details>
+          <summary>Click for styling hints</summary>
+          <ul>
+            <li>Use <code>nav ul</code> to style the main menu list</li>
+            <li>Try <code>nav ul li</code> for individual menu items</li>
+            <li>Use <code>li + li</code> to add spacing between menu items</li>
+            <li>Apply <code>a:hover</code> for link hover effects</li>
+            <li>
+              Use <code>.dropdown:hover .dropdown-menu</code> to show submenu
+            </li>
+            <li>
+              Style <code>.active</code> class for current page highlighting
+            </li>
+            <li>
+              Use <code>li:first-child</code> and <code>li:last-child</code> for
+              special styling
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <script>
+      // Simple mobile menu toggle (for demonstration)
+      document
+        .querySelector(".mobile-toggle")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-menu").classList.toggle("mobile-open");
+          this.classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c1a9f7e9-4d8e-4b6f-8c7b-9e2a0d1f3c5a",
+    "title": "Buy groceries",
+    "description": "Milk, Bread, Cheese, Eggs",
+    "completed": false
+  },
+  {
+    "id": "b2d8e6f0-3c7a-4b5e-9a1d-8f6c5b4a3e2d",
+    "title": "Walk the dog",
+    "description": "Take fluffy to the park for 30 minutes.",
+    "completed": true
+  },
+  {
+    "id": "a3e7f5d1-2b6c-4a3d-8e9f-7d5b4c3a2e1b",
+    "title": "Learn React",
+    "description": "Finish the React tutorial on the official website.",
+    "completed": false
+  },
+  {
+    "id": "f4c6e4b2-1a5d-4c3e-9d8f-6c4b3a2e1d0f",
+    "title": "Build a todo app",
+    "description": "Use the PRD to build a fully functional todo app.",
+    "completed": false
+  },
+  {
+    "id": "e5b5d3c1-0a4e-4b2d-8c7f-5b3a2e1d0c9e",
+    "title": "Deploy the app",
+    "description": "Deploy the todo app to Vercel or Netlify.",
+    "completed": false
+  },
+  {
+    "id": "d6a4c2b0-9a3d-4c1d-7b6e-4a2e1d0c8d7d",
+    "title": "Read a book",
+    "description": "Read 'The Pragmatic Programmer'.",
+    "completed": true
+  }
+]

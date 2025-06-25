@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice: Design a Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="practice-header">
+        <a href="../index.html" class="back-link">← Back to Practice Hub</a>
+        <h1>📝 Practice: Design a Contact Form</h1>
+        <p class="difficulty-badge intermediate">Intermediate Level</p>
+      </header>
+
+      <div class="challenge-info">
+        <h2>📋 Your Challenge</h2>
+        <p>
+          Create a beautiful, interactive contact form using
+          <strong>form selectors, pseudo-classes, and pseudo-elements</strong>.
+          Focus on validation states and user experience.
+        </p>
+
+        <div class="requirements">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Style all form inputs with consistent appearance</li>
+            <li>Add focus states for better accessibility</li>
+            <li>Style required field indicators</li>
+            <li>Create validation states (valid/invalid)</li>
+            <li>Style different input types appropriately</li>
+            <li>Add custom styling to checkboxes and radio buttons</li>
+            <li>Use pseudo-elements for decorative elements</li>
+            <li>Make the form responsive and user-friendly</li>
+          </ul>
+        </div>
+
+        <div class="selectors-to-practice">
+          <h3>🎯 Selectors to Practice:</h3>
+          <div class="selector-list">
+            <code>input[type="text"]</code>
+            <code>input:focus</code>
+            <code>input:required</code>
+            <code>input:valid</code>
+            <code>input:invalid</code>
+            <code>input:checked</code>
+            <code>::placeholder</code>
+            <code>::before</code>
+            <code>::after</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form to Style -->
+      <div class="demo-area">
+        <div class="form-container">
+          <div class="form-header">
+            <h2>Get In Touch</h2>
+            <p>
+              We'd love to hear from you. Send us a message and we'll respond as
+              soon as possible.
+            </p>
+          </div>
+
+          <form class="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  placeholder="Enter your first name"
+                />
+                <span class="error-message">Please enter your first name</span>
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                  placeholder="Enter your last name"
+                />
+                <span class="error-message">Please enter your last name</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your.email@example.com"
+              />
+              <span class="error-message"
+                >Please enter a valid email address</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 (555) 123-4567"
+              />
+              <span class="help-text"
+                >Optional - We'll only call if necessary</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Choose a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="sales">Sales Question</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="error-message">Please select a subject</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                placeholder="Tell us more about your inquiry..."
+              ></textarea>
+              <span class="error-message">Please enter your message</span>
+              <span class="char-counter">0 / 500 characters</span>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <div class="checkbox-wrapper">
+                <input
+                  type="checkbox"
+                  id="newsletter"
+                  name="newsletter"
+                  value="yes"
+                />
+                <label for="newsletter"
+                  >Subscribe to our newsletter for updates</label
+                >
+              </div>
+            </div>
+
+            <div class="form-group radio-group">
+              <fieldset>
+                <legend>Preferred Contact Method</legend>
+                <div class="radio-wrapper">
+                  <input
+                    type="radio"
+                    id="contact-email"
+                    name="contactMethod"
+                    value="email"
+                    checked
+                  />
+                  <label for="contact-email">Email</label>
+                </div>
+                <div class="radio-wrapper">
+                  <input
+                    type="radio"
+                    id="contact-phone"
+                    name="contactMethod"
+                    value="phone"
+                  />
+                  <label for="contact-phone">Phone</label>
+                </div>
+                <div class="radio-wrapper">
+                  <input
+                    type="radio"
+                    id="contact-either"
+                    name="contactMethod"
+                    value="either"
+                  />
+                  <label for="contact-either">Either</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <div class="checkbox-wrapper required-checkbox">
+                <input type="checkbox" id="privacy" name="privacy" required />
+                <label for="privacy"
+                  >I agree to the
+                  <a href="#" target="_blank">Privacy Policy</a> and
+                  <a href="#" target="_blank">Terms of Service</a></label
+                >
+              </div>
+              <span class="error-message"
+                >You must agree to the privacy policy</span
+              >
+            </div>
+
+            <div class="form-actions">
+              <button type="reset" class="btn btn-secondary">Clear Form</button>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </div>
+          </form>
+
+          <div class="form-footer">
+            <p>
+              Having trouble with the form? Email us directly at
+              <a href="mailto:contact@example.com">contact@example.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-hint">
+        <h3>💡 Hints</h3>
+        <details>
+          <summary>Click for styling hints</summary>
+          <ul>
+            <li>Use <code>input[type="text"]</code> to style text inputs</li>
+            <li>Try <code>input:focus</code> for focus states</li>
+            <li>Use <code>input:required</code> to style required fields</li>
+            <li>
+              Apply <code>input:valid</code> and <code>input:invalid</code> for
+              validation
+            </li>
+            <li>Style <code>::placeholder</code> for placeholder text</li>
+            <li>
+              Use <code>input:checked</code> for selected checkboxes/radios
+            </li>
+            <li>
+              Try <code>::before</code> and <code>::after</code> for custom
+              indicators
+            </li>
+            <li>Use <code>input:disabled</code> for disabled states</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <script>
+      // Simple form validation demo
+      const form = document.querySelector(".contact-form");
+      const inputs = form.querySelectorAll("input, select, textarea");
+      const messageInput = document.getElementById("message");
+      const charCounter = document.querySelector(".char-counter");
+
+      // Character counter
+      messageInput.addEventListener("input", function () {
+        const count = this.value.length;
+        charCounter.textContent = `${count} / 500 characters`;
+
+        if (count > 500) {
+          charCounter.classList.add("over-limit");
+        } else {
+          charCounter.classList.remove("over-limit");
+        }
+      });
+
+      // Basic validation on blur
+      inputs.forEach((input) => {
+        input.addEventListener("blur", function () {
+          validateField(this);
+        });
+      });
+
+      function validateField(field) {
+        const formGroup = field.closest(".form-group");
+        const errorMessage = formGroup.querySelector(".error-message");
+
+        if (field.checkValidity()) {
+          formGroup.classList.remove("error");
+          formGroup.classList.add("valid");
+        } else {
+          formGroup.classList.remove("valid");
+          formGroup.classList.add("error");
+        }
+      }
+
+      // Form submission
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        inputs.forEach((input) => validateField(input));
+
+        if (form.checkValidity()) {
+          alert("Form submitted successfully! (This is just a demo)");
+        }
+      });
+    </script>
+  </body>
+</html>

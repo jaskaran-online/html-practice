@@ -1,0 +1,387 @@
+/* 
+📝 CSS Selectors Practice: Contact Form Design
+=============================================
+
+Your task: Create a beautiful contact form using advanced selectors!
+
+Focus on:
+- Attribute selectors (input[type="text"], input[type="email"])
+- Pseudo-classes (:focus, :required, :valid, :invalid, :checked)
+- Pseudo-elements (::placeholder, ::before, ::after)
+- Form states and validation styling
+- Custom checkbox and radio button styling
+
+Let's build an amazing form experience!
+*/
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Practice Header Styles (Pre-styled) */
+.practice-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+.difficulty-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.difficulty-badge.intermediate {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+/* Challenge Info Styles (Pre-styled) */
+.challenge-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.requirements ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.requirements li {
+    margin-bottom: 0.5rem;
+}
+
+.selector-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.selector-list code {
+    background: #f1f3f4;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+/* Demo Area Styles (Pre-styled) */
+.demo-area {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.form-container {
+    padding: 2rem;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+}
+
+.form-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #666;
+}
+
+/* Solution Hint Styles (Pre-styled) */
+.solution-hint {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.solution-hint details {
+    margin-top: 1rem;
+}
+
+.solution-hint summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: #856404;
+}
+
+.solution-hint ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.solution-hint li {
+    margin-bottom: 0.5rem;
+}
+
+/* 
+===========================================
+✨ YOUR CSS STARTS HERE! ✨
+===========================================
+
+Style the contact form using advanced selectors!
+*/
+
+/* 
+TODO: Style the form grid layout
+Hint: Use .form-grid selector
+Make it a 2-column grid for name fields
+*/
+
+
+/* 
+TODO: Style form groups
+Hint: Use .form-group selector
+Add proper spacing and layout
+*/
+
+
+/* 
+TODO: Style form labels
+Hint: Use label selector
+Make them clear and accessible
+*/
+
+
+/* 
+TODO: Style text inputs
+Hint: Use input[type="text"] selector
+Also style email, tel, etc. with input[type="email"], input[type="tel"]
+*/
+
+
+/* 
+TODO: Style the select dropdown
+Hint: Use select selector
+Make it consistent with other inputs
+*/
+
+
+/* 
+TODO: Style the textarea
+Hint: Use textarea selector
+Make it resizable and well-styled
+*/
+
+
+/* 
+TODO: Add focus states to all inputs
+Hint: Use input:focus, select:focus, textarea:focus
+Add border color changes, box-shadow, etc.
+*/
+
+
+/* 
+TODO: Style placeholder text
+Hint: Use ::placeholder pseudo-element
+Change color and opacity
+*/
+
+
+/* 
+TODO: Style required fields
+Hint: Use input:required selector
+Maybe add a visual indicator
+*/
+
+
+/* 
+TODO: Add required indicators with pseudo-elements
+Hint: Use label::after for required fields
+Add an asterisk (*) or other indicator
+*/
+
+
+/* 
+TODO: Style valid inputs
+Hint: Use input:valid selector
+Add green border or checkmark
+*/
+
+
+/* 
+TODO: Style invalid inputs
+Hint: Use input:invalid selector
+Add red border, but only after interaction
+*/
+
+
+/* 
+TODO: Style error states
+Hint: Use .form-group.error selector
+Show error styling when class is added
+*/
+
+
+/* 
+TODO: Style error messages
+Hint: Use .error-message selector
+Hide by default, show in error state
+*/
+
+
+/* 
+TODO: Style help text
+Hint: Use .help-text selector
+Make it subtle and helpful
+*/
+
+
+/* 
+TODO: Style the character counter
+Hint: Use .char-counter selector
+Position it nicely, add over-limit styling
+*/
+
+
+/* 
+TODO: Custom checkbox styling
+Hint: Use input[type="checkbox"] selector
+Hide default, create custom with ::before/::after
+*/
+
+
+/* 
+TODO: Custom radio button styling
+Hint: Use input[type="radio"] selector
+Create custom radio buttons
+*/
+
+
+/* 
+TODO: Style checked checkboxes and radios
+Hint: Use input:checked selector
+Show the selected state
+*/
+
+
+/* 
+TODO: Style checkbox and radio labels
+Hint: Use .checkbox-wrapper label, .radio-wrapper label
+Make them clickable and well-spaced
+*/
+
+
+/* 
+TODO: Style fieldset and legend
+Hint: Use fieldset and legend selectors
+Make the radio group look organized
+*/
+
+
+/* 
+TODO: Style form buttons
+Hint: Use .btn selector and variants (.btn-primary, .btn-secondary)
+Make them look professional
+*/
+
+
+/* 
+TODO: Add button hover effects
+Hint: Use .btn:hover selector
+Add interactive feedback
+*/
+
+
+/* 
+TODO: Style form actions container
+Hint: Use .form-actions selector
+Arrange buttons nicely
+*/
+
+
+/* 
+TODO: Add responsive design
+Hint: Use @media queries
+Stack form grid on mobile
+*/
+
+
+/* 
+BONUS: Advanced Form Styling
+============================
+Try these for extra practice:
+*/
+
+/* 
+TODO: Style disabled inputs
+Hint: Use input:disabled selector
+*/
+
+
+/* 
+TODO: Add floating labels effect
+Hint: Use label positioning and input:focus + label
+*/
+
+
+/* 
+TODO: Create custom file upload styling
+Hint: Use input[type="file"] with custom styling
+*/
+
+
+/* 
+TODO: Add smooth transitions
+Hint: Add transition properties to interactive elements
+*/
+
+
+/* 
+TODO: Style form validation with pseudo-elements
+Hint: Use ::before and ::after for checkmarks and X marks
+*/
+
+/* Your bonus styles here */ 

@@ -1,0 +1,280 @@
+/* 
+🎨 CSS Selectors Practice: Blog Post Styling
+===========================================
+
+Your task: Style the blog post using basic CSS selectors!
+
+Instructions:
+1. Use element selectors (h1, p, img, etc.)
+2. Use class selectors (.class-name)
+3. Use ID selectors (#unique-id)
+4. Add hover effects for interactive elements
+5. Create a clean, readable layout
+
+Feel free to modify colors, fonts, and spacing to match your vision!
+*/
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Practice Header Styles (Pre-styled) */
+.practice-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.back-link:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+.difficulty-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Challenge Info Styles (Pre-styled) */
+.challenge-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.requirements ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.requirements li {
+    margin-bottom: 0.5rem;
+}
+
+.selector-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.selector-list code {
+    background: #f1f3f4;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+/* Solution Hint Styles (Pre-styled) */
+.solution-hint {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.solution-hint details {
+    margin-top: 1rem;
+}
+
+.solution-hint summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: #856404;
+}
+
+.solution-hint ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.solution-hint li {
+    margin-bottom: 0.5rem;
+}
+
+/* 
+===========================================
+✨ YOUR CSS STARTS HERE! ✨
+===========================================
+
+Write your CSS below to style the blog post.
+Use the selectors mentioned in the challenge!
+*/
+
+/* 
+TODO: Style the blog post container
+Hint: Use .blog-post selector
+*/
+
+
+/* 
+TODO: Style the main title
+Hint: Use #main-title selector
+Make it larger, change color, add some spacing
+*/
+
+
+/* 
+TODO: Style the author info section
+Hint: Use .author-info selector
+Make it look like a nice author card
+*/
+
+
+/* 
+TODO: Style the author avatar image
+Hint: Use .author-avatar selector
+Make it round and properly sized
+*/
+
+
+/* 
+TODO: Style regular paragraphs
+Hint: Use p selector
+Add proper spacing and line height
+*/
+
+
+/* 
+TODO: Style the intro paragraph differently
+Hint: Use .intro-paragraph selector
+Make it stand out from regular paragraphs
+*/
+
+
+/* 
+TODO: Style all headings (h1, h2, h3)
+Hint: You can use h1, h2, h3 or style them individually
+Create a visual hierarchy
+*/
+
+
+/* 
+TODO: Style the post image
+Hint: Use .post-image selector
+Make it responsive and add some styling
+*/
+
+
+/* 
+TODO: Style the image inside post-image
+Hint: Use .post-image img selector (combinator!)
+Make it responsive and well-presented
+*/
+
+
+/* 
+TODO: Style the image caption
+Hint: Use figcaption selector
+Make it look like a proper caption
+*/
+
+
+/* 
+TODO: Style the highlight text paragraph
+Hint: Use .highlight-text selector
+Make it stand out with background color or border
+*/
+
+
+/* 
+TODO: Style the quote blockquote
+Hint: Use .quote selector
+Make it look like an elegant quote
+*/
+
+
+/* 
+TODO: Style the best practices list
+Hint: Use .best-practices selector
+Make it look organized and readable
+*/
+
+
+/* 
+TODO: Style the call-to-action section
+Hint: Use .call-to-action selector
+Make it eye-catching
+*/
+
+
+/* 
+TODO: Style the CTA button
+Hint: Use .cta-button selector
+Add hover effects too!
+*/
+
+
+/* 
+TODO: Style the tags section
+Hint: Use .tags selector
+*/
+
+
+/* 
+TODO: Style the tag list
+Hint: Use .tag-list selector
+Make it display horizontally
+*/
+
+
+/* 
+TODO: Style individual tags
+Hint: Use .tag selector
+Make them look like badges or pills
+*/
+
+
+/* 
+TODO: Add hover effects for links
+Hint: Use a:hover selector
+Make links interactive and engaging
+*/
+
+
+/* 
+===========================================
+🎯 BONUS CHALLENGES (Optional)
+===========================================
+
+1. Add smooth transitions to hover effects
+2. Create a dark mode version
+3. Add responsive design for mobile
+4. Style the code elements within paragraphs
+5. Add some subtle animations
+*/
+
+/* Your bonus styles here */ 
