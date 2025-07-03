@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-elements</title>
+    <style>
+      h1::before {
+        content: "👋";
+        color: red;
+      }
+      h2::after {
+        content: "👋";
+      }
+      p::first-letter {
+        color: blue;
+        font-weight: bold;
+      }
+
+      p::first-line {
+        color: red;
+        font-weight: bold;
+      }
+
+      p::selection {
+        background-color: yellow;
+      }
+
+      /* input {
+        color: red;
+      }
+
+      input::placeholder {
+        color: blueviolet;
+      } */
+
+      .first-list li::marker {
+        color: red;
+      }
+
+      .second-list {
+        list-style: none;
+      }
+
+      .second-list li::before {
+        content: "📌";
+      }
+
+      .file-selector::file-selector-button {
+        background-color: dodgerblue;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+      }
+
+      p:hover::after {
+        content: "👋";
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <h2>Hello World</h2>
+
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi fugit alias
+      dicta necessitatibus molestiae nobis soluta inventore voluptatibus, omnis
+      ipsa aperiam suscipit repellat molestias quas iusto cum illo dolores quos!
+    </p>
+
+    <!-- <input type="text" placeholder="please enter something" /> -->
+    <div>
+      <input type="file" class="file-selector" />
+    </div>
+
+    <ul class="first-list">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <li>item4</li>
+      <li>item5</li>
+    </ul>
+
+    <ul class="second-list">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <li>item4</li>
+      <li>item5</li>
+    </ul>
+  </body>
+</html>

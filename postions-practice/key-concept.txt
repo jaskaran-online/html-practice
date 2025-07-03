@@ -1,0 +1,9 @@
+Fixed Positioning: For elements that stay in place while scrolling
+
+Relative + Absolute: For positioning elements relative to their containers
+
+Sticky Positioning: For elements that stick when scrolling reaches them
+
+Absolute Positioning: For precise placement within a relative container
+
+Overlay Techniques: Using positioning for modal dialogs

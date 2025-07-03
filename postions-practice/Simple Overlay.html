@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+      }
+
+      .overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        width: 300px;
+      }
+
+      .show-overlay {
+        display: block;
+      }
+
+      /* This would normally be controlled by JavaScript,
+           but we're faking it with the :target pseudo-class */
+      #overlay:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#overlay">Show Overlay</a>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+        <h2>Overlay Content</h2>
+        <p>This is a simple overlay.</p>
+        <a href="#">Close</a>
+      </div>
+    </div>
+  </body>
+</html>

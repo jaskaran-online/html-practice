@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    border: 2px solid #333;
+    padding: 20px;
+    position: relative; /* This is the positioning context for the absolute-positioned child */
+    background: #fff;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.box {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.static {
+    position: static;
+    background-color: #3498db;
+}
+
+.relative {
+    position: relative;
+    background-color: #2ecc71;
+    top: 75px;
+    left: 75px;
+    margin-bottom: 95px; /* adjust for the positioning */
+}
+
+.absolute {
+    position: absolute;
+    background-color: #9b59b6;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+    height: auto;
+    margin-bottom: 0;
+}
+
+.fixed {
+    position: fixed;
+    background-color: #e74c3c;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    z-index: 100;
+}
+
+.sticky-container {
+    height: 300px; /* Give some space for the sticky element to move in */
+}
+
+.sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f1c40f;
+    color: #333;
+}
+
+.scroll-helper {
+    height: 1500px;
+    padding-top: 20px;
+    border-top: 2px dashed #ccc;
+    margin-top: 20px;
+} 

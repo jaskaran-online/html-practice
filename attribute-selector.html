@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Selector</title>
+    <style>
+      /*
+       element[attribute] {
+      } 
+       */
+
+      input[type] {
+        border: 1px solid dodgerblue;
+      }
+
+      input[type="email"] {
+        border: 2px solid red;
+      }
+
+      /* .text-color-red {
+        color: red;
+      }
+
+      .font-bold {
+        font-weight: bold;
+      }
+
+      .text-2xl {
+        font-size: 30px;
+      }
+
+      .text-xl {
+        font-size: 25px;
+      }
+
+      [class~="important"] {
+        background-color: yellow;
+      } */
+
+      /*
+      starts with
+      
+      a[href^="https"] {
+        color: red;
+      } */
+
+      /*
+      ends with
+      
+      a[href$=".com"] {
+        color: red;
+      } */
+
+      /*
+      contains
+      
+      a[href*="www"] {
+        color: red;
+      } */
+
+      p[lang|="en"] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading" class="important">Attribute Selector</h1>
+    <p class="text-color-red font-bold text-2xl" lang="en">
+      Attribute Selector is used to select elements based on their attributes.
+    </p>
+    <p class="font-bold text-xl important" lang="en-US">
+      Attribute Selector is used to select elements based on their attributes.
+    </p>
+
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" />
+    </div>
+    <div>
+      <a href="https://www.google.com">Click here to search on google</a>
+    </div>
+    <div>
+      <a href="https://www.jaskaran.in">Goto my portfolio</a>
+    </div>
+    <div>
+      <a href="https://facebook.com">Click here to search on facebook</a>
+    </div>
+
+    <div>
+      <img src="image1.jpg" alt="image1" />
+      <img src="image2.png" alt="image2" />
+    </div>
+  </body>
+</html>
