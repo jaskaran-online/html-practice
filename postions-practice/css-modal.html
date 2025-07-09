@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Only Modal</title>
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal:target {
+        display: flex;
+      }
+      .modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        min-width: 200px;
+        text-align: center;
+      }
+      .close {
+        display: inline-block;
+        margin-top: 10px;
+        color: #333;
+        text-decoration: none;
+        background: #eee;
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#modal1">Open Modal</a>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <p>This is a CSS-only modal!</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </body>
+</html>

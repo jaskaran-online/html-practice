@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Image Gallery</title>
+    <style>
+      .gallery-thumb {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin: 5px;
+        border: 2px solid #ccc;
+        cursor: pointer;
+      }
+      .gallery-large {
+        display: none;
+        margin-top: 20px;
+        max-width: 300px;
+        border: 2px solid #333;
+      }
+      .gallery-large:target {
+        display: block;
+      }
+
+      a img:hover {
+        scale: 1.2;
+        transition: scale 0.8s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#img1"
+      ><img
+        class="gallery-thumb"
+        src="https://picsum.photos/id/237/200/300"
+        alt="Thumb 1"
+    /></a>
+    <a href="#img2"
+      ><img
+        class="gallery-thumb"
+        src="https://picsum.photos/id/238/200/300"
+        alt="Thumb 2"
+    /></a>
+    <a href="#img3"
+      ><img
+        class="gallery-thumb"
+        src="https://picsum.photos/id/239/200/300"
+        alt="Thumb 3"
+    /></a>
+
+    <div id="img1" class="gallery-large">
+      <img src="https://picsum.photos/id/237/300/200" alt="Large 1" />
+    </div>
+    <div id="img2" class="gallery-large">
+      <img src="https://picsum.photos/id/238/300/200" alt="Large 2" />
+    </div>
+    <div id="img3" class="gallery-large">
+      <img src="https://picsum.photos/id/239/300/200" alt="Large 3" />
+    </div>
+  </body>
+</html>

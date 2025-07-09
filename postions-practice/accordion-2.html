@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      .section-container {
+        /* height: 100px; */
+      }
+
+      .section-content {
+        display: none;
+      }
+
+      .section-content:target {
+        display: block;
+      }
+
+      .section-container {
+        text-decoration: none;
+        background-color: #d2d2d2;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section-container">
+      <a href="#section1">Section 1</a>
+      <div id="section1" class="section-content">
+        <h1>Section 1</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+          consequatur vel in cumque. Deleniti a dolorem illo accusantium
+          temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+          Officia, odit a.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-container">
+      <a href="#section2">Section 2</a>
+      <div id="section2" class="section-content">
+        <h1>Section 2</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+          consequatur vel in cumque. Deleniti a dolorem illo accusantium
+          temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+          Officia, odit a.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-container">
+      <a href="#section3">Section 3</a>
+      <div id="section3" class="section-content">
+        <h1>Section 3</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+          consequatur vel in cumque. Deleniti a dolorem illo accusantium
+          temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+          Officia, odit a.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-container">
+      <a href="#section4">Section 4</a>
+      <div id="section4" class="section-content">
+        <h1>Section 4</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+          consequatur vel in cumque. Deleniti a dolorem illo accusantium
+          temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+          Officia, odit a.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

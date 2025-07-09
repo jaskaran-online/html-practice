@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Accordion</title>
+    <style>
+      .accordion-content {
+        display: none;
+        background: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      .accordion-content:target {
+        display: block;
+      }
+      .accordion-link {
+        display: block;
+        padding: 10px;
+        background: #eee;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="accordion-link" href="#one">Section 1</a>
+    <div id="one" class="accordion-content">This is section 1 content.</div>
+
+    <a class="accordion-link" href="#two">Section 2</a>
+    <div id="two" class="accordion-content">This is section 2 content.</div>
+
+    <a class="accordion-link" href="#three">Section 3</a>
+    <div id="three" class="accordion-content">This is section 3 content.</div>
+  </body>
+</html>

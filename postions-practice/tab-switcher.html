@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Tab Switcher</title>
+    <style>
+      .tab-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #eee;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        margin-right: 5px;
+      }
+      .tab-content {
+        display: none;
+        padding: 15px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+        margin-top: 10px;
+      }
+      .tab-content:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="tab-link" href="#tab1">Tab 1</a>
+    <a class="tab-link" href="#tab2">Tab 2</a>
+    <a class="tab-link" href="#tab3">Tab 3</a>
+
+    <div id="tab1" class="tab-content">This is Tab 1 content.</div>
+    <div id="tab2" class="tab-content">This is Tab 2 content.</div>
+    <div id="tab3" class="tab-content">This is Tab 3 content.</div>
+  </body>
+</html>

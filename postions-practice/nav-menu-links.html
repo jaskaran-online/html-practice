@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      .section-container {
+        height: 300px;
+      }
+
+      .section-content {
+        display: block;
+        margin-top: 100px;
+      }
+
+      .section-content:target {
+        display: block;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+
+      a {
+        color: #fff;
+        background-color: #333;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#section1">Section 1</a>
+      <a href="#section2">Section 2</a>
+      <a href="#section3">Section 3</a>
+    </nav>
+
+    <main>
+      <div class="section-container">
+        <div id="section1" class="section-content">
+          <h1>Section 1</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+            consequatur vel in cumque. Deleniti a dolorem illo accusantium
+            temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+            Officia, odit a.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <div id="section2" class="section-content">
+          <h1>Section 2</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+            consequatur vel in cumque. Deleniti a dolorem illo accusantium
+            temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+            Officia, odit a.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <div id="section3" class="section-content">
+          <h1>Section 3</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+            consequatur vel in cumque. Deleniti a dolorem illo accusantium
+            temporibus alias magni ipsum aut saepe, veniam fuga exercitationem.
+            Officia, odit a.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

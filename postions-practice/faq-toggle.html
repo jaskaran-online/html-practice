@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAQ Toggle</title>
+    <style>
+      .faq-question {
+        display: block;
+        padding: 10px;
+        background: #eee;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+      }
+      .faq-answer {
+        display: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+      .faq-answer:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="faq-question" href="#q1">What is HTML?</a>
+    <div id="q1" class="faq-answer">
+      HTML stands for HyperText Markup Language.
+    </div>
+
+    <a class="faq-question" href="#q2">What is CSS?</a>
+    <div id="q2" class="faq-answer">CSS stands for Cascading Style Sheets.</div>
+
+    <a class="faq-question" href="#q3">What is JavaScript?</a>
+    <div id="q3" class="faq-answer">
+      JavaScript is a programming language for the web.
+    </div>
+  </body>
+</html>

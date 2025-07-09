@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nav Menu with CSS Position</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      /* NAVBAR STYLING */
+      nav {
+        background: #333;
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        position: relative; /* Parent for submenu positioning */
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+      }
+
+      nav ul li:hover {
+        background: #444;
+      }
+
+      /* SUBMENU */
+      nav ul li ul {
+        position: absolute;
+        top: 100%; /* Position below the parent */
+        left: 0;
+        background: #555;
+        display: none;
+        min-width: 150px;
+        z-index: 999;
+      }
+
+      nav ul li:hover ul {
+        display: block;
+      }
+
+      nav ul li ul li a {
+        padding: 10px;
+      }
+
+      nav ul li ul li:hover {
+        background: #666;
+      }
+
+      /* FIXED NAV EXAMPLE */
+      .fixed-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      /* PAGE CONTENT */
+      .content {
+        padding: 100px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed Nav Bar -->
+    <nav class="fixed-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+          <a href="#">Services ▼</a>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">App Development</a></li>
+            <li><a href="#">SEO</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content">
+      <h1>Welcome to Our Website</h1>
+      <p>
+        This is the main content of the page. Scroll to see the fixed navbar.
+      </p>
+    </div>
+  </body>
+</html>
