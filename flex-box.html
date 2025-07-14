@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <style>
+      .main-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .solutions-list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        gap: 20px;
+      }
+      .header {
+        text-align: center;
+      }
+      .second-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .emerging-risks {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The Identity Crisis Section -->
+    <section>
+      <!-- Section header -->
+      <div class="header">
+        <h1>The Identity Crisis</h1>
+        <p>
+          Legacy identity methods—passwords, basic 2FA, device certificates—are
+          not enough.
+        </p>
+        <h3>80-90% of cyberattacks start with stolen credentials</h3>
+      </div>
+
+      <!-- Main content of section -->
+      <div class="main-container">
+        <div>
+          <div>Emerging Risks</div>
+          <div>
+            <ul class="emerging-risks">
+              <li>
+                $10.5 trillion projected cyber crime costs annually in 2025
+              </li>
+              <li>
+                IoT devices now outnumber humans, often with poor security
+              </li>
+              <li>AI deepfakes & social engineering attacks are exploding</li>
+              <li>
+                Lack of endpoint identity for humans, IoT, and AI agents is a
+                root cause of breaches
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="second-section">
+          <div>
+            <h1>iVALT Solution</h1>
+            <p>
+              iVALT delivers a mobile-centric/SaaS platform for verified trust
+              across all digital interactions — using existing infrastructure.
+            </p>
+          </div>
+          <div>
+            <ul class="solutions-list">
+              <li>Stolen credentials become worthless</li>
+              <li>User experience is simplified to 1-Click</li>
+              <li>Social engineering and AI deepfakes are blocked</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

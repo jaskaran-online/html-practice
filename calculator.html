@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iOS Calculator</title>
+    <script src="https://cdn.tailwindcss.com/v4"></script>
+    <style>
+      .btn-number {
+        @apply bg-zinc-800 hover:bg-zinc-700 text-white;
+      }
+      .btn-operator {
+        @apply bg-amber-500 hover:bg-amber-400 text-white;
+      }
+      .btn-special {
+        @apply bg-zinc-400 hover:bg-zinc-300 text-black;
+      }
+    </style>
+  </head>
+  <body class="bg-black flex justify-center items-center h-screen">
+    <div class="w-80 h-auto bg-black rounded-lg p-4 space-y-4">
+      <!-- Display -->
+      <div
+        class="text-white text-6xl text-right h-20 pr-4 flex items-end justify-end"
+      >
+        <span id="display">0</span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="grid grid-cols-4 gap-3">
+        <button class="btn-special w-16 h-16 rounded-full text-2xl">AC</button>
+        <button class="btn-special w-16 h-16 rounded-full text-2xl">+/-</button>
+        <button class="btn-special w-16 h-16 rounded-full text-2xl">%</button>
+        <button class="btn-operator w-16 h-16 rounded-full text-2xl">÷</button>
+
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">7</button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">8</button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">9</button>
+        <button class="btn-operator w-16 h-16 rounded-full text-2xl">×</button>
+
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">4</button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">5</button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">6</button>
+        <button class="btn-operator w-16 h-16 rounded-full text-2xl">-</button>
+
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">1</button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">2</button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">3</button>
+        <button class="btn-operator w-16 h-16 rounded-full text-2xl">+</button>
+
+        <button
+          class="btn-number col-span-2 w-full h-16 rounded-full text-2xl text-left pl-6"
+        >
+          0
+        </button>
+        <button class="btn-number w-16 h-16 rounded-full text-2xl">.</button>
+        <button class="btn-operator w-16 h-16 rounded-full text-2xl">=</button>
+      </div>
+    </div>
+
+    <script>
+      const display = document.getElementById("display");
+      const buttons = Array.from(document.getElementsByTagName("button"));
+      let currentValue = "";
+      let operator = null;
+      let previousValue = "";
+
+      buttons.map((button) => {
+        button.addEventListener("click", (e) => {
+          const value = e.target.innerText;
+
+          if (!isNaN(value) || value === ".") {
+            if (currentValue.includes(".") && value === ".") return;
+            currentValue += value;
+            display.innerText = currentValue;
+          } else if (["+", "-", "×", "÷"].includes(value)) {
+            if (currentValue === "") return;
+            if (previousValue !== "") {
+              calculate();
+            }
+            operator = value;
+            previousValue = currentValue;
+            currentValue = "";
+          } else if (value === "=") {
+            if (currentValue === "" || previousValue === "") return;
+            calculate();
+            operator = null;
+          } else if (value === "AC") {
+            currentValue = "";
+            previousValue = "";
+            operator = null;
+            display.innerText = "0";
+          } else if (value === "+/-") {
+            if (currentValue === "") return;
+            currentValue = (parseFloat(currentValue) * -1).toString();
+            display.innerText = currentValue;
+          } else if (value === "%") {
+            if (currentValue === "") return;
+            currentValue = (parseFloat(currentValue) / 100).toString();
+            display.innerText = currentValue;
+          }
+        });
+      });
+
+      function calculate() {
+        let result;
+        const prev = parseFloat(previousValue);
+        const current = parseFloat(currentValue);
+        if (isNaN(prev) || isNaN(current)) return;
+
+        switch (operator) {
+          case "+":
+            result = prev + current;
+            break;
+          case "-":
+            result = prev - current;
+            break;
+          case "×":
+            result = prev * current;
+            break;
+          case "÷":
+            result = prev / current;
+            break;
+          default:
+            return;
+        }
+        currentValue = result.toString();
+        previousValue = "";
+        display.innerText = currentValue;
+      }
+    </script>
+  </body>
+</html>
