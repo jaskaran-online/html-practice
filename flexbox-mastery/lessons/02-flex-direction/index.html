@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 02: Flex Direction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 02: Flex Direction</h1>
+        <p>Control the direction of your flex items</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Flex Direction Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>row (default)</h3>
+                    <p>Left to right →</p>
+                </div>
+                <div class="value-card">
+                    <h3>row-reverse</h3>
+                    <p>Right to left ←</p>
+                </div>
+                <div class="value-card">
+                    <h3>column</h3>
+                    <p>Top to bottom ↓</p>
+                </div>
+                <div class="value-card">
+                    <h3>column-reverse</h3>
+                    <p>Bottom to top ↑</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <button onclick="setDirection('row')" class="control-btn active" data-direction="row">Row</button>
+                <button onclick="setDirection('row-reverse')" class="control-btn" data-direction="row-reverse">Row Reverse</button>
+                <button onclick="setDirection('column')" class="control-btn" data-direction="column">Column</button>
+                <button onclick="setDirection('column-reverse')" class="control-btn" data-direction="column-reverse">Column Reverse</button>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+                <div class="demo-item">4</div>
+            </div>
+            
+            <div class="current-code">
+                <code>flex-direction: <span id="currentDirection">row</span>;</code>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Horizontal Navigation (row)</h3>
+                <nav class="nav-horizontal">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+
+            <div class="example">
+                <h3>Vertical Sidebar (column)</h3>
+                <nav class="nav-vertical">
+                    <a href="#">Dashboard</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Horizontal layout (default) */
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Vertical layout */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reverse orders */
+.container {
+    display: flex;
+    flex-direction: row-reverse; /* or column-reverse */
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../01-flex-basics/index.html" class="prev-btn">← Previous: Flex Basics</a>
+        <a href="../03-flex-wrap/index.html" class="next-btn">Next: Flex Wrap →</a>
+    </nav>
+
+    <script>
+        function setDirection(direction) {
+            const container = document.getElementById('demoContainer');
+            const currentDirection = document.getElementById('currentDirection');
+            const buttons = document.querySelectorAll('.control-btn');
+            
+            // Update container
+            container.style.flexDirection = direction;
+            
+            // Update code display
+            currentDirection.textContent = direction;
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-direction="${direction}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

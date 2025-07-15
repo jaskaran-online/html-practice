@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 06: Align Content</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 06: Align Content</h1>
+        <p>Control multi-line flex layouts</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Align Content vs Align Items</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>align-items</h3>
+                    <p>Controls individual items on cross axis</p>
+                    <div class="mini-demo single-line">
+                        <div class="mini-item">A</div>
+                        <div class="mini-item">B</div>
+                        <div class="mini-item">C</div>
+                    </div>
+                </div>
+                <div class="comparison-card">
+                    <h3>align-content</h3>
+                    <p>Controls multiple lines as a whole</p>
+                    <div class="mini-demo multi-line">
+                        <div class="mini-item">A</div>
+                        <div class="mini-item">B</div>
+                        <div class="mini-item">C</div>
+                        <div class="mini-item">D</div>
+                        <div class="mini-item">E</div>
+                        <div class="mini-item">F</div>
+                    </div>
+                </div>
+            </div>
+            <div class="important-note">
+                <strong>⚠️ Important:</strong> align-content only works when <code>flex-wrap: wrap</code> and there are multiple lines!
+            </div>
+        </section>
+
+        <section class="values">
+            <h2>📋 Align Content Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>stretch</h3>
+                    <p>Lines stretch to fill space (default)</p>
+                </div>
+                <div class="value-card">
+                    <h3>flex-start</h3>
+                    <p>Lines packed at start</p>
+                </div>
+                <div class="value-card">
+                    <h3>flex-end</h3>
+                    <p>Lines packed at end</p>
+                </div>
+                <div class="value-card">
+                    <h3>center</h3>
+                    <p>Lines centered</p>
+                </div>
+                <div class="value-card">
+                    <h3>space-between</h3>
+                    <p>Equal space between lines</p>
+                </div>
+                <div class="value-card">
+                    <h3>space-around</h3>
+                    <p>Equal space around lines</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <button onclick="setAlignContent('stretch')" class="control-btn active" data-align="stretch">stretch</button>
+                <button onclick="setAlignContent('flex-start')" class="control-btn" data-align="flex-start">flex-start</button>
+                <button onclick="setAlignContent('flex-end')" class="control-btn" data-align="flex-end">flex-end</button>
+                <button onclick="setAlignContent('center')" class="control-btn" data-align="center">center</button>
+                <button onclick="setAlignContent('space-between')" class="control-btn" data-align="space-between">space-between</button>
+                <button onclick="setAlignContent('space-around')" class="control-btn" data-align="space-around">space-around</button>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+                <div class="demo-item">Item 4</div>
+                <div class="demo-item">Item 5</div>
+                <div class="demo-item">Item 6</div>
+                <div class="demo-item">Item 7</div>
+                <div class="demo-item">Item 8</div>
+                <div class="demo-item">Item 9</div>
+            </div>
+            
+            <div class="current-code">
+                <code>align-content: <span id="currentAlign">stretch</span>;</code>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Image Gallery (center)</h3>
+                <div class="gallery-container">
+                    <div class="gallery-item">🖼️ Photo 1</div>
+                    <div class="gallery-item">🖼️ Photo 2</div>
+                    <div class="gallery-item">🖼️ Photo 3</div>
+                    <div class="gallery-item">🖼️ Photo 4</div>
+                    <div class="gallery-item">🖼️ Photo 5</div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Tag Cloud (space-between)</h3>
+                <div class="tag-cloud">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Vue</span>
+                    <span class="tag">Angular</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">Flask</span>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Card Grid (stretch)</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Card 1</h4>
+                        <p>Short content</p>
+                    </div>
+                    <div class="card">
+                        <h4>Card 2</h4>
+                        <p>Medium length content here</p>
+                    </div>
+                    <div class="card">
+                        <h4>Card 3</h4>
+                        <p>Much longer content that spans multiple lines to demonstrate how align-content works</p>
+                    </div>
+                    <div class="card">
+                        <h4>Card 4</h4>
+                        <p>Another card</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Multi-line flex container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 400px;
+}
+
+/* Image gallery with centered rows */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    min-height: 300px;
+}
+
+/* Tag cloud with space between rows */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 200px;
+}
+
+/* Card grid with stretched rows */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    min-height: 500px;
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../05-align-items/index.html" class="prev-btn">← Previous: Align Items</a>
+        <a href="../07-gap-property/index.html" class="next-btn">Next: Gap Property →</a>
+    </nav>
+
+    <script>
+        function setAlignContent(align) {
+            const container = document.getElementById('demoContainer');
+            const currentAlign = document.getElementById('currentAlign');
+            const buttons = document.querySelectorAll('.control-btn');
+            
+            container.style.alignContent = align;
+            currentAlign.textContent = align;
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-align="${align}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

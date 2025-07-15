@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: Align Self</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 11: Align Self</h1>
+        <p>Override alignment for individual flex items</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 What is Align Self?</h2>
+            <div class="concept-explanation">
+                <div class="concept-text">
+                    <p><strong>align-self</strong> allows individual flex items to override the container's <code>align-items</code> value.</p>
+                    <ul>
+                        <li><code>align-self: auto</code> - Uses container's align-items (default)</li>
+                        <li><code>align-self: flex-start</code> - Aligns to start of cross axis</li>
+                        <li><code>align-self: flex-end</code> - Aligns to end of cross axis</li>
+                        <li><code>align-self: center</code> - Centers on cross axis</li>
+                        <li><code>align-self: stretch</code> - Stretches to fill container</li>
+                        <li><code>align-self: baseline</code> - Aligns to text baseline</li>
+                    </ul>
+                </div>
+                <div class="concept-visual">
+                    <div class="visual-container">
+                        <div class="visual-item self-start">flex-start</div>
+                        <div class="visual-item self-center">center</div>
+                        <div class="visual-item self-end">flex-end</div>
+                        <div class="visual-item self-stretch">stretch</div>
+                    </div>
+                    <p class="visual-caption">Different align-self values</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Container align-items: <span id="containerValue">center</span></label>
+                    <select id="containerSelect" onchange="updateContainer(this.value)">
+                        <option value="stretch">stretch</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center" selected>center</option>
+                        <option value="baseline">baseline</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Item 1 - align-self: <span id="self1Value">auto</span></label>
+                    <select id="self1Select" onchange="updateSelf(1, this.value)">
+                        <option value="auto" selected>auto</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="stretch">stretch</option>
+                        <option value="baseline">baseline</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Item 2 - align-self: <span id="self2Value">auto</span></label>
+                    <select id="self2Select" onchange="updateSelf(2, this.value)">
+                        <option value="auto" selected>auto</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="stretch">stretch</option>
+                        <option value="baseline">baseline</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Item 3 - align-self: <span id="self3Value">auto</span></label>
+                    <select id="self3Select" onchange="updateSelf(3, this.value)">
+                        <option value="auto" selected>auto</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="stretch">stretch</option>
+                        <option value="baseline">baseline</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item" id="item1">Item 1<br>Small</div>
+                <div class="demo-item" id="item2">Item 2<br>Medium<br>Content</div>
+                <div class="demo-item" id="item3">Item 3<br>Large<br>Content<br>Here</div>
+            </div>
+            
+            <div class="current-code">
+                <code>
+                    .container { align-items: <span id="codeContainer">center</span>; }<br>
+                    .item1 { align-self: <span id="code1">auto</span>; }<br>
+                    .item2 { align-self: <span id="code2">auto</span>; }<br>
+                    .item3 { align-self: <span id="code3">auto</span>; }
+                </code>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>🔍 Container vs Individual Control</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h3>Container align-items: center</h3>
+                    <div class="comparison-demo container-control">
+                        <div class="comp-item">Item 1</div>
+                        <div class="comp-item">Item 2<br>Taller</div>
+                        <div class="comp-item">Item 3</div>
+                    </div>
+                    <p>All items follow container's alignment</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>Individual align-self control</h3>
+                    <div class="comparison-demo individual-control">
+                        <div class="comp-item" style="align-self: flex-start;">flex-start</div>
+                        <div class="comp-item" style="align-self: center;">center<br>Taller</div>
+                        <div class="comp-item" style="align-self: flex-end;">flex-end</div>
+                    </div>
+                    <p>Each item has its own alignment</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Card Layout with Featured Item</h3>
+                <div class="card-layout">
+                    <div class="card">
+                        <h4>Regular Card</h4>
+                        <p>Standard content</p>
+                        <p class="price">$29.99</p>
+                    </div>
+                    <div class="card featured">
+                        <h4>Featured Card</h4>
+                        <p>This card stands out with more content and special alignment</p>
+                        <p class="price">$49.99</p>
+                        <div class="badge">POPULAR</div>
+                    </div>
+                    <div class="card">
+                        <h4>Regular Card</h4>
+                        <p>Standard content</p>
+                        <p class="price">$19.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Navigation with Logo</h3>
+                <nav class="nav-example">
+                    <div class="logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='%23667eea'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/%3E%3C/svg%3E" alt="Logo">
+                        <span>Brand</span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="nav-actions">
+                        <button class="btn-secondary">Login</button>
+                        <button class="btn-primary">Sign Up</button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="example">
+                <h3>Form with Mixed Alignments</h3>
+                <form class="form-example">
+                    <div class="form-row">
+                        <label>Name:</label>
+                        <input type="text" placeholder="Your name">
+                        <span class="help-text">Required field</span>
+                    </div>
+                    <div class="form-row">
+                        <label>Bio:</label>
+                        <textarea placeholder="Tell us about yourself"></textarea>
+                        <span class="help-text">Optional</span>
+                    </div>
+                    <div class="form-row">
+                        <label>Newsletter:</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">Subscribe to newsletter</label>
+                        </div>
+                        <span class="help-text">Recommended</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <h2>🎨 Common Use Cases</h2>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h4>Highlight Special Items</h4>
+                    <div class="use-case-demo highlight">
+                        <div class="item">Normal</div>
+                        <div class="item special">Special</div>
+                        <div class="item">Normal</div>
+                    </div>
+                    <p>Make one item stand out with different alignment</p>
+                </div>
+                <div class="use-case">
+                    <h4>Mixed Content Heights</h4>
+                    <div class="use-case-demo mixed">
+                        <div class="item">Short</div>
+                        <div class="item tall">Tall Content Here</div>
+                        <div class="item">Short</div>
+                    </div>
+                    <p>Handle items with different content amounts</p>
+                </div>
+                <div class="use-case">
+                    <h4>Icon + Text Alignment</h4>
+                    <div class="use-case-demo icon-text">
+                        <div class="item icon">🏠</div>
+                        <div class="item text">Home Page<br>Welcome message</div>
+                        <div class="item icon">⚙️</div>
+                    </div>
+                    <p>Align icons differently from text content</p>
+                </div>
+                <div class="use-case">
+                    <h4>Status Indicators</h4>
+                    <div class="use-case-demo status">
+                        <div class="item">Task 1</div>
+                        <div class="item status-item">✅ Complete</div>
+                        <div class="item">Task 3</div>
+                    </div>
+                    <p>Position status indicators independently</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Featured card that stretches */
+.card-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card {
+    flex: 1;
+    padding: 1rem;
+}
+
+.card.featured {
+    align-self: stretch; /* Fill full height */
+    background: linear-gradient(...);
+}
+
+/* Navigation with centered logo */
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.logo {
+    align-self: center; /* Ensure logo stays centered */
+}
+
+.nav-links {
+    align-self: flex-start; /* Links at top */
+}
+
+/* Form with mixed alignments */
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.label {
+    align-self: center; /* Center labels */
+}
+
+.help-text {
+    align-self: flex-end; /* Help text at bottom */
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Icon alignment */
+.content-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.icon {
+    align-self: center; /* Center icons */
+}
+
+.text {
+    align-self: flex-start; /* Text at top */
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../10-flex-basis/index.html" class="prev-btn">← Previous: Flex Basis</a>
+        <a href="../../projects/card-layouts/index.html" class="next-btn">Next: Real Projects →</a>
+    </nav>
+
+    <script>
+        function updateContainer(value) {
+            const container = document.getElementById('demoContainer');
+            const containerValue = document.getElementById('containerValue');
+            const codeContainer = document.getElementById('codeContainer');
+            
+            container.style.alignItems = value;
+            containerValue.textContent = value;
+            codeContainer.textContent = value;
+        }
+
+        function updateSelf(itemNum, value) {
+            const item = document.getElementById(`item${itemNum}`);
+            const valueSpan = document.getElementById(`self${itemNum}Value`);
+            const codeSpan = document.getElementById(`code${itemNum}`);
+            
+            item.style.alignSelf = value;
+            valueSpan.textContent = value;
+            codeSpan.textContent = value;
+        }
+
+        // Initialize with default values
+        document.getElementById('demoContainer').style.alignItems = 'center';
+        document.getElementById('item1').style.alignSelf = 'auto';
+        document.getElementById('item2').style.alignSelf = 'auto';
+        document.getElementById('item3').style.alignSelf = 'auto';
+    </script>
+</body>
+</html>

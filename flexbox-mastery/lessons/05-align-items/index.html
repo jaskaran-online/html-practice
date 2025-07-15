@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 05: Align Items</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 05: Align Items</h1>
+        <p>Master cross axis alignment</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Align Items Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>stretch</h3>
+                    <p>Items stretch to fill container (default)</p>
+                </div>
+                <div class="value-card">
+                    <h3>flex-start</h3>
+                    <p>Items align to start of cross axis</p>
+                </div>
+                <div class="value-card">
+                    <h3>flex-end</h3>
+                    <p>Items align to end of cross axis</p>
+                </div>
+                <div class="value-card">
+                    <h3>center</h3>
+                    <p>Items center on cross axis</p>
+                </div>
+                <div class="value-card">
+                    <h3>baseline</h3>
+                    <p>Items align to text baseline</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <button onclick="setAlign('stretch')" class="control-btn active" data-align="stretch">stretch</button>
+                <button onclick="setAlign('flex-start')" class="control-btn" data-align="flex-start">flex-start</button>
+                <button onclick="setAlign('flex-end')" class="control-btn" data-align="flex-end">flex-end</button>
+                <button onclick="setAlign('center')" class="control-btn" data-align="center">center</button>
+                <button onclick="setAlign('baseline')" class="control-btn" data-align="baseline">baseline</button>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item small">Small</div>
+                <div class="demo-item medium">Medium Content</div>
+                <div class="demo-item large">Large<br>Multi-line<br>Content</div>
+                <div class="demo-item small">Small</div>
+            </div>
+            
+            <div class="current-code">
+                <code>align-items: <span id="currentAlign">stretch</span>;</code>
+            </div>
+        </section>
+
+        <section class="axis-demo">
+            <h2>🧭 Main vs Cross Axis</h2>
+            <div class="axis-explanation">
+                <div class="axis-visual">
+                    <div class="axis-container">
+                        <div class="main-axis">Main Axis (justify-content) →</div>
+                        <div class="cross-axis">Cross Axis<br>(align-items)<br>↓</div>
+                        <div class="flex-items">
+                            <div class="axis-item">1</div>
+                            <div class="axis-item">2</div>
+                            <div class="axis-item">3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="axis-info">
+                    <h3>Key Differences:</h3>
+                    <ul>
+                        <li><strong>justify-content</strong> controls main axis (horizontal by default)</li>
+                        <li><strong>align-items</strong> controls cross axis (vertical by default)</li>
+                        <li>Axes switch when <code>flex-direction: column</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Card with Centered Content</h3>
+                <div class="card-example">
+                    <div class="icon">🎯</div>
+                    <div class="content">
+                        <h4>Perfect Centering</h4>
+                        <p>Using align-items: center for vertical alignment</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Form Input Group</h3>
+                <div class="input-group">
+                    <label>Email:</label>
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Baseline Alignment (Text)</h3>
+                <div class="text-baseline">
+                    <span class="text-small">Small</span>
+                    <span class="text-medium">Medium</span>
+                    <span class="text-large">Large</span>
+                    <span class="text-small">Text</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Perfect centering */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+/* Form input alignment */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Baseline text alignment */
+.text-container {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Stretch to fill height */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../04-justify-content/index.html" class="prev-btn">← Previous: Justify Content</a>
+        <a href="../06-align-content/index.html" class="next-btn">Next: Align Content →</a>
+    </nav>
+
+    <script>
+        function setAlign(align) {
+            const container = document.getElementById('demoContainer');
+            const currentAlign = document.getElementById('currentAlign');
+            const buttons = document.querySelectorAll('.control-btn');
+            
+            container.style.alignItems = align;
+            currentAlign.textContent = align;
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-align="${align}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

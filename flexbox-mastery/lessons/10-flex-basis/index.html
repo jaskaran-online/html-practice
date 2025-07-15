@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10: Flex Basis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 10: Flex Basis</h1>
+        <p>Set the initial size of flex items before growing or shrinking</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 What is Flex Basis?</h2>
+            <div class="concept-explanation">
+                <div class="concept-text">
+                    <p><strong>flex-basis</strong> sets the initial main size of a flex item before free space is distributed according to flex-grow and flex-shrink.</p>
+                    <ul>
+                        <li><code>flex-basis: auto</code> - Uses item's width/height (default)</li>
+                        <li><code>flex-basis: 200px</code> - Sets initial size to 200px</li>
+                        <li><code>flex-basis: 50%</code> - Sets initial size to 50% of container</li>
+                        <li><code>flex-basis: 0</code> - Ignores content size, distributes space evenly</li>
+                    </ul>
+                    <div class="important-note">
+                        <strong>💡 Key Point:</strong> flex-basis is like width/height but specifically for the main axis!
+                    </div>
+                </div>
+                <div class="concept-visual">
+                    <div class="visual-container">
+                        <div class="visual-item basis-auto">auto</div>
+                        <div class="visual-item basis-200">200px</div>
+                        <div class="visual-item basis-percent">30%</div>
+                        <div class="visual-item basis-zero">0</div>
+                    </div>
+                    <p class="visual-caption">Different flex-basis values</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Item 1 - flex-basis: <span id="basis1Value">auto</span></label>
+                    <select id="basis1Select" onchange="updateBasis(1, this.value)">
+                        <option value="auto">auto</option>
+                        <option value="0">0</option>
+                        <option value="100px">100px</option>
+                        <option value="200px">200px</option>
+                        <option value="20%">20%</option>
+                        <option value="50%">50%</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Item 2 - flex-basis: <span id="basis2Value">auto</span></label>
+                    <select id="basis2Select" onchange="updateBasis(2, this.value)">
+                        <option value="auto">auto</option>
+                        <option value="0">0</option>
+                        <option value="100px">100px</option>
+                        <option value="200px">200px</option>
+                        <option value="20%">20%</option>
+                        <option value="50%">50%</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Item 3 - flex-basis: <span id="basis3Value">auto</span></label>
+                    <select id="basis3Select" onchange="updateBasis(3, this.value)">
+                        <option value="auto">auto</option>
+                        <option value="0">0</option>
+                        <option value="100px">100px</option>
+                        <option value="200px">200px</option>
+                        <option value="20%">20%</option>
+                        <option value="50%">50%</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-item" id="item1">Short</div>
+                <div class="demo-item" id="item2">Medium Content</div>
+                <div class="demo-item" id="item3">Very Long Content Here</div>
+            </div>
+            
+            <div class="current-code">
+                <code>
+                    .item1 { flex-basis: <span id="code1">auto</span>; }<br>
+                    .item2 { flex-basis: <span id="code2">auto</span>; }<br>
+                    .item3 { flex-basis: <span id="code3">auto</span>; }
+                </code>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>🔍 Flex Basis vs Width</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h3>Using width property</h3>
+                    <div class="comparison-demo width-demo">
+                        <div class="comp-item" style="width: 200px;">width: 200px</div>
+                        <div class="comp-item" style="width: 100px;">width: 100px</div>
+                        <div class="comp-item" style="width: 150px;">width: 150px</div>
+                    </div>
+                    <p>Width is rigid, doesn't participate in flex calculations</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>Using flex-basis</h3>
+                    <div class="comparison-demo basis-demo">
+                        <div class="comp-item" style="flex-basis: 200px;">flex-basis: 200px</div>
+                        <div class="comp-item" style="flex-basis: 100px;">flex-basis: 100px</div>
+                        <div class="comp-item" style="flex-basis: 150px;">flex-basis: 150px</div>
+                    </div>
+                    <p>Flex-basis is flexible, works with grow/shrink</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex-shorthand">
+            <h2>⚡ Flex Shorthand Property</h2>
+            <div class="shorthand-explanation">
+                <div class="shorthand-text">
+                    <p>The <code>flex</code> property is shorthand for <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>:</p>
+                    <div class="shorthand-examples">
+                        <div class="shorthand-item">
+                            <code>flex: 1;</code>
+                            <span>= flex: 1 1 0;</span>
+                        </div>
+                        <div class="shorthand-item">
+                            <code>flex: auto;</code>
+                            <span>= flex: 1 1 auto;</span>
+                        </div>
+                        <div class="shorthand-item">
+                            <code>flex: none;</code>
+                            <span>= flex: 0 0 auto;</span>
+                        </div>
+                        <div class="shorthand-item">
+                            <code>flex: 2 1 200px;</code>
+                            <span>= grow: 2, shrink: 1, basis: 200px</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shorthand-visual">
+                    <h4>Common Patterns</h4>
+                    <div class="pattern-demo">
+                        <div class="pattern-item flex-1">flex: 1</div>
+                        <div class="pattern-item flex-auto">flex: auto</div>
+                        <div class="pattern-item flex-none">flex: none</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Responsive Card Grid</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Product 1</h4>
+                        <p>flex-basis: 250px</p>
+                        <p class="price">$29.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 2</h4>
+                        <p>flex-basis: 250px</p>
+                        <p class="price">$39.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 3</h4>
+                        <p>flex-basis: 250px</p>
+                        <p class="price">$19.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 4</h4>
+                        <p>flex-basis: 250px</p>
+                        <p class="price">$49.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Dashboard Layout</h3>
+                <div class="dashboard-layout">
+                    <aside class="sidebar">
+                        <h4>Sidebar</h4>
+                        <p>flex-basis: 250px</p>
+                        <p>flex-shrink: 0</p>
+                    </aside>
+                    <main class="main-area">
+                        <h4>Main Content</h4>
+                        <p>flex-basis: 0</p>
+                        <p>flex-grow: 1</p>
+                    </main>
+                    <aside class="widget-area">
+                        <h4>Widgets</h4>
+                        <p>flex-basis: 200px</p>
+                        <p>flex-shrink: 0</p>
+                    </aside>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Form Layout</h3>
+                <form class="form-example">
+                    <div class="form-row">
+                        <label>Name:</label>
+                        <input type="text" placeholder="flex-basis: 0, flex-grow: 1">
+                    </div>
+                    <div class="form-row">
+                        <label>Email:</label>
+                        <input type="email" placeholder="flex-basis: 0, flex-grow: 1">
+                    </div>
+                    <div class="form-row">
+                        <label>Phone:</label>
+                        <input type="tel" placeholder="flex-basis: 200px">
+                        <button type="button" class="verify-btn">Verify</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="best-practices">
+            <h2>✅ Best Practices</h2>
+            <div class="practices-grid">
+                <div class="practice good">
+                    <h4>✅ Do: Use flex shorthand</h4>
+                    <code>flex: 1 1 250px;</code>
+                    <p>Clear and concise</p>
+                </div>
+                <div class="practice avoid">
+                    <h4>⚠️ Avoid: Mixing width with flex</h4>
+                    <code>width: 200px; flex-grow: 1;</code>
+                    <p>Can cause unexpected behavior</p>
+                </div>
+                <div class="practice good">
+                    <h4>✅ Do: Use flex-basis for responsive</h4>
+                    <code>flex: 1 1 300px;</code>
+                    <p>Items wrap when too narrow</p>
+                </div>
+                <div class="practice avoid">
+                    <h4>⚠️ Avoid: Fixed widths in flex</h4>
+                    <code>width: 300px;</code>
+                    <p>Not responsive</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Responsive card grid */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 250px; /* grow, shrink, min-width */
+    max-width: 350px; /* prevent too wide */
+}
+
+/* Dashboard layout */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 250px; /* fixed width sidebar */
+}
+
+.main-content {
+    flex: 1 1 0; /* take remaining space */
+    min-width: 0; /* allow shrinking */
+}
+
+/* Form with flexible inputs */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.label {
+    flex: 0 0 100px; /* fixed label width */
+}
+
+.input {
+    flex: 1 1 0; /* flexible input */
+    min-width: 150px;
+}
+
+.button {
+    flex: 0 0 auto; /* size to content */
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../09-flex-shrink/index.html" class="prev-btn">← Previous: Flex Shrink</a>
+        <a href="../11-align-self/index.html" class="next-btn">Next: Align Self →</a>
+    </nav>
+
+    <script>
+        function updateBasis(itemNum, value) {
+            const item = document.getElementById(`item${itemNum}`);
+            const valueSpan = document.getElementById(`basis${itemNum}Value`);
+            const codeSpan = document.getElementById(`code${itemNum}`);
+            
+            item.style.flexBasis = value;
+            valueSpan.textContent = value;
+            codeSpan.textContent = value;
+        }
+
+        // Initialize with default values
+        document.getElementById('item1').style.flexBasis = 'auto';
+        document.getElementById('item2').style.flexBasis = 'auto';
+        document.getElementById('item3').style.flexBasis = 'auto';
+    </script>
+</body>
+</html>

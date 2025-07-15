@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Navigation Bars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Project: Navigation Bars</h1>
+        <p>Build responsive navigation components with flexbox</p>
+    </header>
+
+    <main>
+        <section class="project-intro">
+            <h2>🎯 What You'll Build</h2>
+            <p>Create three different navigation bar styles commonly used in modern web development:</p>
+            <ul>
+                <li>🏠 <strong>Header Navigation</strong> - Logo left, links right</li>
+                <li>📱 <strong>Mobile Navigation</strong> - Responsive hamburger menu</li>
+                <li>📊 <strong>Dashboard Sidebar</strong> - Vertical navigation</li>
+            </ul>
+        </section>
+
+        <section class="nav-examples">
+            <div class="example">
+                <h3>1. Header Navigation</h3>
+                <nav class="header-nav">
+                    <div class="logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='%23667eea'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/%3E%3C/svg%3E" alt="Logo">
+                        <span>FlexCorp</span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button class="btn-secondary">Login</button>
+                        <button class="btn-primary">Sign Up</button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="example">
+                <h3>2. Mobile Navigation</h3>
+                <nav class="mobile-nav">
+                    <div class="mobile-header">
+                        <div class="logo">FlexCorp</div>
+                        <button class="hamburger" onclick="toggleMobileMenu()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                    <ul class="mobile-menu" id="mobileMenu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="mobile-actions">
+                            <a href="#" class="btn-secondary">Login</a>
+                            <a href="#" class="btn-primary">Sign Up</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="example">
+                <h3>3. Dashboard Sidebar</h3>
+                <div class="dashboard-layout">
+                    <nav class="sidebar">
+                        <div class="sidebar-header">
+                            <h4>Dashboard</h4>
+                        </div>
+                        <ul class="sidebar-nav">
+                            <li><a href="#" class="active">📊 Overview</a></li>
+                            <li><a href="#">👥 Users</a></li>
+                            <li><a href="#">📈 Analytics</a></li>
+                            <li><a href="#">⚙️ Settings</a></li>
+                            <li><a href="#">💬 Messages</a></li>
+                        </ul>
+                        <div class="sidebar-footer">
+                            <div class="user-profile">
+                                <div class="avatar">JD</div>
+                                <div class="user-info">
+                                    <div class="name">John Doe</div>
+                                    <div class="role">Admin</div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <main class="dashboard-content">
+                        <h2>Welcome to Dashboard</h2>
+                        <p>This is the main content area. The sidebar uses flexbox for perfect vertical layout.</p>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <section class="code-breakdown">
+            <h2>💻 Key Flexbox Techniques</h2>
+            
+            <div class="technique">
+                <h3>Header Navigation Layout</h3>
+                <pre><code>.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}</code></pre>
+            </div>
+
+            <div class="technique">
+                <h3>Sidebar Layout</h3>
+                <pre><code>.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 250px;
+}
+
+.sidebar-nav {
+    flex: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Pushes to bottom */
+}</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

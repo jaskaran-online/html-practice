@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 04: Justify Content</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 04: Justify Content</h1>
+        <p>Master main axis alignment</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Justify Content Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>flex-start</h3>
+                    <p>Items at the start</p>
+                </div>
+                <div class="value-card">
+                    <h3>flex-end</h3>
+                    <p>Items at the end</p>
+                </div>
+                <div class="value-card">
+                    <h3>center</h3>
+                    <p>Items in the center</p>
+                </div>
+                <div class="value-card">
+                    <h3>space-between</h3>
+                    <p>Equal space between items</p>
+                </div>
+                <div class="value-card">
+                    <h3>space-around</h3>
+                    <p>Equal space around items</p>
+                </div>
+                <div class="value-card">
+                    <h3>space-evenly</h3>
+                    <p>Equal space everywhere</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <button onclick="setJustify('flex-start')" class="control-btn active" data-justify="flex-start">flex-start</button>
+                <button onclick="setJustify('flex-end')" class="control-btn" data-justify="flex-end">flex-end</button>
+                <button onclick="setJustify('center')" class="control-btn" data-justify="center">center</button>
+                <button onclick="setJustify('space-between')" class="control-btn" data-justify="space-between">space-between</button>
+                <button onclick="setJustify('space-around')" class="control-btn" data-justify="space-around">space-around</button>
+                <button onclick="setJustify('space-evenly')" class="control-btn" data-justify="space-evenly">space-evenly</button>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item">A</div>
+                <div class="demo-item">B</div>
+                <div class="demo-item">C</div>
+            </div>
+            
+            <div class="current-code">
+                <code>justify-content: <span id="currentJustify">flex-start</span>;</code>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Common Use Cases</h2>
+            
+            <div class="use-case">
+                <h3>Navigation Bar (space-between)</h3>
+                <div class="navbar">
+                    <div class="logo">Logo</div>
+                    <nav class="nav-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="use-case">
+                <h3>Button Group (center)</h3>
+                <div class="button-group">
+                    <button class="btn">Cancel</button>
+                    <button class="btn primary">Save</button>
+                </div>
+            </div>
+
+            <div class="use-case">
+                <h3>Card Actions (space-evenly)</h3>
+                <div class="card-actions">
+                    <button class="action-btn">👍 Like</button>
+                    <button class="action-btn">💬 Comment</button>
+                    <button class="action-btn">📤 Share</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../03-flex-wrap/index.html" class="prev-btn">← Previous: Flex Wrap</a>
+        <a href="../05-align-items/index.html" class="next-btn">Next: Align Items →</a>
+    </nav>
+
+    <script>
+        function setJustify(justify) {
+            const container = document.getElementById('demoContainer');
+            const currentJustify = document.getElementById('currentJustify');
+            const buttons = document.querySelectorAll('.control-btn');
+            
+            container.style.justifyContent = justify;
+            currentJustify.textContent = justify;
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-justify="${justify}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

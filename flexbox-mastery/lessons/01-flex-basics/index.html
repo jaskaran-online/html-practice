@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 01: Flex Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 01: Flex Basics</h1>
+        <p>Understanding flex containers and flex items</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Key Concepts</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Flex Container</h3>
+                    <p>The parent element with <code>display: flex</code></p>
+                </div>
+                <div class="concept-card">
+                    <h3>Flex Items</h3>
+                    <p>Direct children of the flex container</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Main Axis</h3>
+                    <p>Primary axis (horizontal by default)</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Cross Axis</h3>
+                    <p>Perpendicular to main axis (vertical by default)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Before vs After</h2>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h3>Without Flexbox</h3>
+                    <div class="container normal">
+                        <div class="item">Item 1</div>
+                        <div class="item">Item 2</div>
+                        <div class="item">Item 3</div>
+                    </div>
+                    <p>Block elements stack vertically</p>
+                </div>
+
+                <div class="after">
+                    <h3>With Flexbox</h3>
+                    <div class="container flex">
+                        <div class="item">Item 1</div>
+                        <div class="item">Item 2</div>
+                        <div class="item">Item 3</div>
+                    </div>
+                    <p>Flex items align horizontally</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="practice">
+            <h2>🛠️ Practice Exercise</h2>
+            <p>Try adding <code>display: flex</code> to the container below:</p>
+            
+            <div class="exercise">
+                <div class="container practice-container">
+                    <div class="item">A</div>
+                    <div class="item">B</div>
+                    <div class="item">C</div>
+                    <div class="item">D</div>
+                </div>
+                <button onclick="toggleFlex()" class="toggle-btn">Toggle Flexbox</button>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Example</h2>
+            <pre><code>/* CSS */
+.container {
+    display: flex; /* Creates flex container */
+}
+
+.item {
+    /* These become flex items automatically */
+    background: #667eea;
+    padding: 1rem;
+    margin: 0.5rem;
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../02-flex-direction/index.html" class="next-btn">Next: Flex Direction →</a>
+    </nav>
+
+    <script>
+        function toggleFlex() {
+            const container = document.querySelector('.practice-container');
+            container.classList.toggle('flex');
+        }
+    </script>
+</body>
+</html>

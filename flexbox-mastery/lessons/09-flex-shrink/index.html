@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 09: Flex Shrink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 09: Flex Shrink</h1>
+        <p>Control how items contract when space is limited</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 What is Flex Shrink?</h2>
+            <div class="concept-explanation">
+                <div class="concept-text">
+                    <p><strong>flex-shrink</strong> defines how much an item should shrink relative to other items when there's not enough space in the container.</p>
+                    <ul>
+                        <li><code>flex-shrink: 1</code> - Item shrinks normally (default)</li>
+                        <li><code>flex-shrink: 0</code> - Item won't shrink at all</li>
+                        <li><code>flex-shrink: 2</code> - Item shrinks twice as much as items with flex-shrink: 1</li>
+                    </ul>
+                    <div class="important-note">
+                        <strong>⚠️ Key Point:</strong> flex-shrink only applies when items overflow their container!
+                    </div>
+                </div>
+                <div class="concept-visual">
+                    <div class="visual-container narrow">
+                        <div class="visual-item no-shrink">No Shrink</div>
+                        <div class="visual-item shrink-1">Shrink: 1</div>
+                        <div class="visual-item shrink-2">Shrink: 2</div>
+                    </div>
+                    <p class="visual-caption">Items in a narrow container</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Container Width: <span id="widthValue">400px</span></label>
+                    <input type="range" id="widthSlider" min="200" max="600" step="50" value="400" oninput="updateWidth(this.value)">
+                </div>
+                <div class="control-group">
+                    <label>Item 1 - flex-shrink: <span id="shrink1Value">0</span></label>
+                    <input type="range" id="shrink1Slider" min="0" max="3" step="1" value="0" oninput="updateShrink(1, this.value)">
+                </div>
+                <div class="control-group">
+                    <label>Item 2 - flex-shrink: <span id="shrink2Value">1</span></label>
+                    <input type="range" id="shrink2Slider" min="0" max="3" step="1" value="1" oninput="updateShrink(2, this.value)">
+                </div>
+                <div class="control-group">
+                    <label>Item 3 - flex-shrink: <span id="shrink3Value">2</span></label>
+                    <input type="range" id="shrink3Slider" min="0" max="3" step="1" value="2" oninput="updateShrink(3, this.value)">
+                </div>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item" id="item1">Item 1 (200px)</div>
+                <div class="demo-item" id="item2">Item 2 (200px)</div>
+                <div class="demo-item" id="item3">Item 3 (200px)</div>
+            </div>
+            
+            <div class="current-code">
+                <code>
+                    .container { width: <span id="codeWidth">400px</span>; }<br>
+                    .item1 { flex-shrink: <span id="code1">0</span>; }<br>
+                    .item2 { flex-shrink: <span id="code2">1</span>; }<br>
+                    .item3 { flex-shrink: <span id="code3">2</span>; }
+                </code>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>🔍 Shrink vs No Shrink</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h3>With flex-shrink: 1 (default)</h3>
+                    <div class="comparison-container">
+                        <div class="comparison-demo shrink-enabled">
+                            <div class="comp-item">Long Content Item 1</div>
+                            <div class="comp-item">Long Content Item 2</div>
+                            <div class="comp-item">Long Content Item 3</div>
+                        </div>
+                    </div>
+                    <p>Items shrink to fit container</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>With flex-shrink: 0</h3>
+                    <div class="comparison-container">
+                        <div class="comparison-demo shrink-disabled">
+                            <div class="comp-item">Long Content Item 1</div>
+                            <div class="comp-item">Long Content Item 2</div>
+                            <div class="comp-item">Long Content Item 3</div>
+                        </div>
+                    </div>
+                    <p>Items maintain size, may overflow</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Navigation Bar (prevent shrinking)</h3>
+                <nav class="nav-example">
+                    <div class="logo">Company Logo</div>
+                    <div class="nav-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="nav-actions">
+                        <button class="btn">Login</button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="example">
+                <h3>Card Layout (controlled shrinking)</h3>
+                <div class="card-layout">
+                    <div class="card priority">
+                        <h4>Priority Card</h4>
+                        <p>This card should maintain its size</p>
+                    </div>
+                    <div class="card flexible">
+                        <h4>Flexible Card</h4>
+                        <p>This card can shrink when needed</p>
+                    </div>
+                    <div class="card flexible">
+                        <h4>Another Flexible Card</h4>
+                        <p>This card can also shrink</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Form Layout</h3>
+                <form class="form-layout">
+                    <input type="text" placeholder="Name (fixed width)" class="fixed-input">
+                    <input type="email" placeholder="Email (flexible)" class="flexible-input">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="common-issues">
+            <h2>⚠️ Common Issues & Solutions</h2>
+            <div class="issues-grid">
+                <div class="issue">
+                    <h4>❌ Text Overflow</h4>
+                    <div class="issue-demo bad">
+                        <div class="text-item">This is very long text that gets cut off</div>
+                        <div class="text-item">Short</div>
+                    </div>
+                    <p>Text gets cut off when items shrink too much</p>
+                </div>
+                <div class="solution">
+                    <h4>✅ Solution: min-width</h4>
+                    <div class="issue-demo good">
+                        <div class="text-item">This is very long text that stays readable</div>
+                        <div class="text-item">Short</div>
+                    </div>
+                    <p>Use min-width to prevent excessive shrinking</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Prevent item from shrinking */
+.fixed-sidebar {
+    flex-shrink: 0;
+    width: 250px;
+}
+
+/* Allow controlled shrinking */
+.main-content {
+    flex-shrink: 1;
+    min-width: 300px; /* Prevent excessive shrinking */
+}
+
+/* Navigation that doesn't break */
+.nav-item {
+    flex-shrink: 0; /* Keep nav items readable */
+    white-space: nowrap;
+}
+
+/* Responsive card that shrinks gracefully */
+.card {
+    flex: 1 1 250px; /* grow, shrink, basis */
+    min-width: 200px; /* Minimum readable size */
+}
+
+/* Form inputs with different shrink behavior */
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.label {
+    flex-shrink: 0; /* Keep labels readable */
+}
+
+.input {
+    flex: 1 1 auto; /* Can grow and shrink */
+    min-width: 150px;
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../08-flex-grow/index.html" class="prev-btn">← Previous: Flex Grow</a>
+        <a href="../10-flex-basis/index.html" class="next-btn">Next: Flex Basis →</a>
+    </nav>
+
+    <script>
+        function updateWidth(value) {
+            const container = document.getElementById('demoContainer');
+            const widthValue = document.getElementById('widthValue');
+            const codeWidth = document.getElementById('codeWidth');
+            
+            const width = value + 'px';
+            container.style.width = width;
+            widthValue.textContent = width;
+            codeWidth.textContent = width;
+        }
+
+        function updateShrink(itemNum, value) {
+            const item = document.getElementById(`item${itemNum}`);
+            const valueSpan = document.getElementById(`shrink${itemNum}Value`);
+            const codeSpan = document.getElementById(`code${itemNum}`);
+            
+            item.style.flexShrink = value;
+            valueSpan.textContent = value;
+            codeSpan.textContent = value;
+        }
+
+        // Initialize with default values
+        document.getElementById('demoContainer').style.width = '400px';
+        document.getElementById('item1').style.flexShrink = '0';
+        document.getElementById('item2').style.flexShrink = '1';
+        document.getElementById('item3').style.flexShrink = '2';
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 03: Flex Wrap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 03: Flex Wrap</h1>
+        <p>Handle overflow and create multi-line layouts</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Flex Wrap Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>nowrap</h3>
+                    <p>Items stay on one line (default)</p>
+                </div>
+                <div class="value-card">
+                    <h3>wrap</h3>
+                    <p>Items wrap to new lines</p>
+                </div>
+                <div class="value-card">
+                    <h3>wrap-reverse</h3>
+                    <p>Items wrap in reverse order</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <button onclick="setWrap('nowrap')" class="control-btn active" data-wrap="nowrap">nowrap</button>
+                <button onclick="setWrap('wrap')" class="control-btn" data-wrap="wrap">wrap</button>
+                <button onclick="setWrap('wrap-reverse')" class="control-btn" data-wrap="wrap-reverse">wrap-reverse</button>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+                <div class="demo-item">Item 4</div>
+                <div class="demo-item">Item 5</div>
+                <div class="demo-item">Item 6</div>
+                <div class="demo-item">Item 7</div>
+                <div class="demo-item">Item 8</div>
+            </div>
+            
+            <div class="current-code">
+                <code>flex-wrap: <span id="currentWrap">nowrap</span>;</code>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>🔍 Wrap vs No Wrap</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h3>Without Wrap (overflow)</h3>
+                    <div class="container nowrap-demo">
+                        <div class="item">Long Item 1</div>
+                        <div class="item">Long Item 2</div>
+                        <div class="item">Long Item 3</div>
+                        <div class="item">Long Item 4</div>
+                        <div class="item">Long Item 5</div>
+                    </div>
+                    <p>Items shrink and may overflow</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>With Wrap (responsive)</h3>
+                    <div class="container wrap-demo">
+                        <div class="item">Long Item 1</div>
+                        <div class="item">Long Item 2</div>
+                        <div class="item">Long Item 3</div>
+                        <div class="item">Long Item 4</div>
+                        <div class="item">Long Item 5</div>
+                    </div>
+                    <p>Items maintain size and wrap naturally</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Tag List (wrap)</h3>
+                <div class="tag-container">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Web Development</span>
+                    <span class="tag">Frontend</span>
+                    <span class="tag">Backend</span>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Image Gallery (wrap)</h3>
+                <div class="gallery">
+                    <div class="gallery-item">🖼️ Photo 1</div>
+                    <div class="gallery-item">🖼️ Photo 2</div>
+                    <div class="gallery-item">🖼️ Photo 3</div>
+                    <div class="gallery-item">🖼️ Photo 4</div>
+                    <div class="gallery-item">🖼️ Photo 5</div>
+                    <div class="gallery-item">🖼️ Photo 6</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Allow items to wrap */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Shorthand: flex-flow combines direction and wrap */
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    /* Same as: flex-direction: row; flex-wrap: wrap; */
+}
+
+/* Responsive card layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 300px; /* grow, shrink, basis */
+    min-width: 250px;
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../02-flex-direction/index.html" class="prev-btn">← Previous: Flex Direction</a>
+        <a href="../04-justify-content/index.html" class="next-btn">Next: Justify Content →</a>
+    </nav>
+
+    <script>
+        function setWrap(wrap) {
+            const container = document.getElementById('demoContainer');
+            const currentWrap = document.getElementById('currentWrap');
+            const buttons = document.querySelectorAll('.control-btn');
+            
+            container.style.flexWrap = wrap;
+            currentWrap.textContent = wrap;
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-wrap="${wrap}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

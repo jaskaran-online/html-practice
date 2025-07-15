@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 08: Flex Grow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 08: Flex Grow</h1>
+        <p>Control how items expand to fill available space</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 What is Flex Grow?</h2>
+            <div class="concept-explanation">
+                <div class="concept-text">
+                    <p><strong>flex-grow</strong> defines how much an item should grow relative to other items when there's extra space in the container.</p>
+                    <ul>
+                        <li><code>flex-grow: 0</code> - Item won't grow (default)</li>
+                        <li><code>flex-grow: 1</code> - Item takes equal share of extra space</li>
+                        <li><code>flex-grow: 2</code> - Item takes twice as much space as items with flex-grow: 1</li>
+                    </ul>
+                </div>
+                <div class="concept-visual">
+                    <div class="visual-container">
+                        <div class="visual-item no-grow">No Grow</div>
+                        <div class="visual-item grow-1">Grow: 1</div>
+                        <div class="visual-item grow-2">Grow: 2</div>
+                    </div>
+                    <p class="visual-caption">Items with different flex-grow values</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Item 1 - flex-grow: <span id="grow1Value">0</span></label>
+                    <input type="range" id="grow1Slider" min="0" max="3" step="1" value="0" oninput="updateGrow(1, this.value)">
+                </div>
+                <div class="control-group">
+                    <label>Item 2 - flex-grow: <span id="grow2Value">1</span></label>
+                    <input type="range" id="grow2Slider" min="0" max="3" step="1" value="1" oninput="updateGrow(2, this.value)">
+                </div>
+                <div class="control-group">
+                    <label>Item 3 - flex-grow: <span id="grow3Value">2</span></label>
+                    <input type="range" id="grow3Slider" min="0" max="3" step="1" value="2" oninput="updateGrow(3, this.value)">
+                </div>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-item" id="item1">Item 1</div>
+                <div class="demo-item" id="item2">Item 2</div>
+                <div class="demo-item" id="item3">Item 3</div>
+            </div>
+            
+            <div class="current-code">
+                <code>
+                    .item1 { flex-grow: <span id="code1">0</span>; }<br>
+                    .item2 { flex-grow: <span id="code2">1</span>; }<br>
+                    .item3 { flex-grow: <span id="code3">2</span>; }
+                </code>
+            </div>
+        </section>
+
+        <section class="math-explanation">
+            <h2>🧮 How Flex Grow Calculation Works</h2>
+            <div class="math-demo">
+                <div class="math-visual">
+                    <div class="container-width">Container: 600px</div>
+                    <div class="items-width">Items base width: 100px each</div>
+                    <div class="extra-space">Extra space: 600px - 300px = 300px</div>
+                    <div class="grow-calculation">
+                        <h4>With flex-grow values: 0, 1, 2</h4>
+                        <p>Total grow: 0 + 1 + 2 = 3</p>
+                        <p>Item 1: 100px + (300px × 0/3) = 100px</p>
+                        <p>Item 2: 100px + (300px × 1/3) = 200px</p>
+                        <p>Item 3: 100px + (300px × 2/3) = 300px</p>
+                    </div>
+                </div>
+                <div class="math-result">
+                    <div class="result-container">
+                        <div class="result-item" style="flex: 0 0 100px;">100px</div>
+                        <div class="result-item" style="flex: 1 0 100px;">200px</div>
+                        <div class="result-item" style="flex: 2 0 100px;">300px</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Sidebar Layout</h3>
+                <div class="sidebar-layout">
+                    <aside class="sidebar">Sidebar</aside>
+                    <main class="main-content">Main Content (grows to fill space)</main>
+                    <aside class="sidebar">Sidebar</aside>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Button Group</h3>
+                <div class="button-group">
+                    <button class="btn">Cancel</button>
+                    <button class="btn btn-primary">Save Changes</button>
+                    <button class="btn">Delete</button>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Dashboard Cards</h3>
+                <div class="dashboard">
+                    <div class="dashboard-card">
+                        <h4>Users</h4>
+                        <p class="metric">1,234</p>
+                    </div>
+                    <div class="dashboard-card featured">
+                        <h4>Revenue</h4>
+                        <p class="metric">$12,345</p>
+                        <p class="growth">+15% this month</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h4>Orders</h4>
+                        <p class="metric">567</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="common-patterns">
+            <h2>🔧 Common Patterns</h2>
+            <div class="patterns-grid">
+                <div class="pattern">
+                    <h4>Equal Distribution</h4>
+                    <div class="pattern-demo equal">
+                        <div class="pattern-item">1</div>
+                        <div class="pattern-item">2</div>
+                        <div class="pattern-item">3</div>
+                    </div>
+                    <code>flex-grow: 1</code>
+                </div>
+                <div class="pattern">
+                    <h4>Main Content Area</h4>
+                    <div class="pattern-demo main-content">
+                        <div class="pattern-item">Nav</div>
+                        <div class="pattern-item">Content</div>
+                        <div class="pattern-item">Aside</div>
+                    </div>
+                    <code>flex-grow: 0, 1, 0</code>
+                </div>
+                <div class="pattern">
+                    <h4>Progressive Growth</h4>
+                    <div class="pattern-demo progressive">
+                        <div class="pattern-item">Small</div>
+                        <div class="pattern-item">Medium</div>
+                        <div class="pattern-item">Large</div>
+                    </div>
+                    <code>flex-grow: 1, 2, 3</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Equal distribution */
+.container {
+    display: flex;
+}
+
+.item {
+    flex-grow: 1; /* All items grow equally */
+}
+
+/* Sidebar layout */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    flex-grow: 0; /* Don't grow */
+    width: 250px;
+}
+
+.main {
+    flex-grow: 1; /* Take remaining space */
+}
+
+/* Featured item gets more space */
+.card {
+    flex-grow: 1;
+}
+
+.card.featured {
+    flex-grow: 2; /* Twice as much space */
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../07-gap-property/index.html" class="prev-btn">← Previous: Gap Property</a>
+        <a href="../09-flex-shrink/index.html" class="next-btn">Next: Flex Shrink →</a>
+    </nav>
+
+    <script>
+        function updateGrow(itemNum, value) {
+            const item = document.getElementById(`item${itemNum}`);
+            const valueSpan = document.getElementById(`grow${itemNum}Value`);
+            const codeSpan = document.getElementById(`code${itemNum}`);
+            
+            item.style.flexGrow = value;
+            valueSpan.textContent = value;
+            codeSpan.textContent = value;
+        }
+
+        // Initialize with default values
+        document.getElementById('item1').style.flexGrow = '0';
+        document.getElementById('item2').style.flexGrow = '1';
+        document.getElementById('item3').style.flexGrow = '2';
+    </script>
+</body>
+</html>

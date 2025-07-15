@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 07: Gap Property</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Lesson 07: Gap Property</h1>
+        <p>Modern spacing with the gap property</p>
+    </header>
+
+    <main>
+        <section class="concept">
+            <h2>🎯 Gap vs Margins</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h3>❌ Old Way: Margins</h3>
+                    <div class="old-way">
+                        <div class="old-item">Item 1</div>
+                        <div class="old-item">Item 2</div>
+                        <div class="old-item">Item 3</div>
+                    </div>
+                    <p>Margins add up and create uneven spacing at edges</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>✅ New Way: Gap</h3>
+                    <div class="new-way">
+                        <div class="new-item">Item 1</div>
+                        <div class="new-item">Item 2</div>
+                        <div class="new-item">Item 3</div>
+                    </div>
+                    <p>Gap creates consistent spacing only between items</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gap-types">
+            <h2>📏 Gap Property Types</h2>
+            <div class="types-grid">
+                <div class="type-card">
+                    <h3>gap</h3>
+                    <p>Sets both row and column gaps</p>
+                    <code>gap: 1rem;</code>
+                </div>
+                <div class="type-card">
+                    <h3>row-gap</h3>
+                    <p>Sets spacing between rows</p>
+                    <code>row-gap: 2rem;</code>
+                </div>
+                <div class="type-card">
+                    <h3>column-gap</h3>
+                    <p>Sets spacing between columns</p>
+                    <code>column-gap: 1rem;</code>
+                </div>
+                <div class="type-card">
+                    <h3>gap shorthand</h3>
+                    <p>Row gap, then column gap</p>
+                    <code>gap: 2rem 1rem;</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>📊 Interactive Demo</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="gapSlider">Gap Size: <span id="gapValue">1rem</span></label>
+                    <input type="range" id="gapSlider" min="0" max="3" step="0.25" value="1" oninput="updateGap(this.value)">
+                </div>
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="wrapToggle" onchange="toggleWrap()" checked>
+                        Enable Wrap
+                    </label>
+                </div>
+            </div>
+            
+            <div class="demo-container" id="demoContainer">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+                <div class="demo-item">Item 4</div>
+                <div class="demo-item">Item 5</div>
+                <div class="demo-item">Item 6</div>
+                <div class="demo-item">Item 7</div>
+                <div class="demo-item">Item 8</div>
+            </div>
+            
+            <div class="current-code">
+                <code>gap: <span id="currentGap">1rem</span>;</code>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>🌟 Real-World Examples</h2>
+            
+            <div class="example">
+                <h3>Card Grid with Gap</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Product 1</h4>
+                        <p>$29.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 2</h4>
+                        <p>$39.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 3</h4>
+                        <p>$19.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 4</h4>
+                        <p>$49.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 5</h4>
+                        <p>$24.99</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product 6</h4>
+                        <p>$34.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Navigation with Gap</h3>
+                <nav class="nav-example">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+
+            <div class="example">
+                <h3>Form Layout with Different Gaps</h3>
+                <form class="form-example">
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                    <input type="email" placeholder="Email Address">
+                    <textarea placeholder="Message"></textarea>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="browser-support">
+            <h2>🌐 Browser Support</h2>
+            <div class="support-info">
+                <div class="support-good">
+                    <h3>✅ Excellent Support</h3>
+                    <ul>
+                        <li>Chrome 84+</li>
+                        <li>Firefox 63+</li>
+                        <li>Safari 14.1+</li>
+                        <li>Edge 84+</li>
+                    </ul>
+                </div>
+                <div class="support-fallback">
+                    <h3>🔄 Fallback for Older Browsers</h3>
+                    <pre><code>/* Fallback with margins */
+.item {
+    margin: 0.5rem;
+}
+
+/* Modern browsers with gap */
+.container {
+    display: flex;
+    gap: 1rem;
+}
+
+.container .item {
+    margin: 0; /* Reset margins */
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="code">
+            <h2>💻 Code Examples</h2>
+            <pre><code>/* Basic gap usage */
+.container {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Different row and column gaps */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1rem; /* row-gap column-gap */
+}
+
+/* Individual gap properties */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    column-gap: 1rem;
+}
+
+/* Responsive gaps */
+.responsive-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .responsive-grid {
+        gap: 2rem;
+    }
+}</code></pre>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../06-align-content/index.html" class="prev-btn">← Previous: Align Content</a>
+        <a href="../08-flex-grow/index.html" class="next-btn">Next: Flex Grow →</a>
+    </nav>
+
+    <script>
+        function updateGap(value) {
+            const container = document.getElementById('demoContainer');
+            const gapValue = document.getElementById('gapValue');
+            const currentGap = document.getElementById('currentGap');
+            
+            const gapSize = value + 'rem';
+            container.style.gap = gapSize;
+            gapValue.textContent = gapSize;
+            currentGap.textContent = gapSize;
+        }
+
+        function toggleWrap() {
+            const container = document.getElementById('demoContainer');
+            const wrapToggle = document.getElementById('wrapToggle');
+            
+            container.style.flexWrap = wrapToggle.checked ? 'wrap' : 'nowrap';
+        }
+    </script>
+</body>
+</html>
