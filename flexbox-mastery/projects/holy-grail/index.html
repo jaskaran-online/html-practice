@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Holy Grail Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <a href="../../index.html" class="back-btn">← Back to Hub</a>
+        <h1>Project: Holy Grail Layout</h1>
+        <p>Build the classic three-column layout with flexbox</p>
+    </header>
+
+    <main>
+        <section class="project-intro">
+            <h2>🎯 What is the Holy Grail Layout?</h2>
+            <p>The "Holy Grail" layout is a classic web design pattern with:</p>
+            <ul>
+                <li>A fixed-height header</li>
+                <li>A fixed-height footer</li>
+                <li>A fluid center with:</li>
+                <ul>
+                    <li>A fixed-width navigation on the left</li>
+                    <li>A fixed-width sidebar on the right</li>
+                    <li>A fluid-width main content area in the middle</li>
+                </ul>
+            </ul>
+            <p>This layout was notoriously difficult to implement before flexbox, often requiring complex float-based solutions or absolute positioning hacks.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>📊 Interactive Demo</h2>
+            <p>Resize your browser window to see how the layout responds.</p>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>Layout Type:</label>
+                    <select id="layoutSelect" onchange="updateLayout(this.value)">
+                        <option value="desktop">Desktop (3 columns)</option>
+                        <option value="tablet">Tablet (Sidebars below)</option>
+                        <option value="mobile">Mobile (Single column)</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Left Sidebar Width:</label>
+                    <input type="range" id="leftWidthSlider" min="100" max="300" step="10" value="200" oninput="updateSidebarWidth('left', this.value)">
+                    <span id="leftWidthValue">200px</span>
+                </div>
+                <div class="control-group">
+                    <label>Right Sidebar Width:</label>
+                    <input type="range" id="rightWidthSlider" min="100" max="300" step="10" value="200" oninput="updateSidebarWidth('right', this.value)">
+                    <span id="rightWidthValue">200px</span>
+                </div>
+            </div>
+            
+            <div class="holy-grail-container" id="holyGrailContainer">
+                <header class="hg-header">Header</header>
+                <div class="hg-body">
+                    <nav class="hg-nav" id="leftSidebar">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <main class="hg-content">
+                        <h2>Main Content</h2>
+                        <p>This is the main content area of the Holy Grail layout. It takes up the available space between the two sidebars.</p>
+                        <p>The beauty of flexbox is that this center column automatically expands to fill the available space, while the sidebars maintain their specified widths.</p>
+                        <p>Before flexbox, this layout required complex CSS with floats, negative margins, and other hacks.</p>
+                        <p>Now it's simple and straightforward with just a few flexbox properties!</p>
+                    </main>
+                    <aside class="hg-sidebar" id="rightSidebar">
+                        <h3>Sidebar</h3>
+                        <div class="widget">
+                            <h4>Recent Posts</h4>
+                            <ul>
+                                <li>Post Title 1</li>
+                                <li>Post Title 2</li>
+                                <li>Post Title 3</li>
+                            </ul>
+                        </div>
+                        <div class="widget">
+                            <h4>Categories</h4>
+                            <ul>
+                                <li>Category 1</li>
+                                <li>Category 2</li>
+                                <li>Category 3</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <footer class="hg-footer">Footer</footer>
+            </div>
+        </section>
+
+        <section class="code-section">
+            <h2>💻 Implementation</h2>
+            
+            <div class="code-tabs">
+                <button class="tab-btn active" onclick="showTab('html')">HTML</button>
+                <button class="tab-btn" onclick="showTab('css')">CSS</button>
+                <button class="tab-btn" onclick="showTab('responsive')">Responsive</button>
+            </div>
+            
+            <div class="tab-content active" id="html-tab">
+                <pre><code>&lt;div class="holy-grail-container"&gt;
+    &lt;header class="hg-header"&gt;Header&lt;/header&gt;
+    &lt;div class="hg-body"&gt;
+        &lt;nav class="hg-nav"&gt;Navigation&lt;/nav&gt;
+        &lt;main class="hg-content"&gt;Main Content&lt;/main&gt;
+        &lt;aside class="hg-sidebar"&gt;Sidebar&lt;/aside&gt;
+    &lt;/div&gt;
+    &lt;footer class="hg-footer"&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            
+            <div class="tab-content" id="css-tab">
+                <pre><code>/* Container with flex column */
+.holy-grail-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Header and footer with fixed height */
+.hg-header, .hg-footer {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+/* Body section takes remaining height */
+.hg-body {
+    display: flex; /* Create the 3 columns */
+    flex: 1 0 auto; /* Grow to fill space */
+}
+
+/* Fixed-width sidebars */
+.hg-nav {
+    flex: 0 0 200px; /* Don't grow or shrink, stay 200px */
+    order: -1; /* Place before content */
+}
+
+.hg-sidebar {
+    flex: 0 0 200px; /* Don't grow or shrink, stay 200px */
+}
+
+/* Fluid middle content */
+.hg-content {
+    flex: 1; /* Grow to fill available space */
+}</code></pre>
+            </div>
+            
+            <div class="tab-content" id="responsive-tab">
+                <pre><code>/* Tablet Layout */
+@media (max-width: 992px) {
+    .hg-body {
+        flex-direction: column; /* Stack vertically */
+    }
+    
+    .hg-nav, .hg-sidebar {
+        flex: 0 0 auto; /* Auto height */
+        width: 100%; /* Full width */
+    }
+    
+    /* Optional: Reorder for mobile */
+    .hg-nav {
+        order: 0; /* Reset order */
+    }
+    
+    .hg-sidebar {
+        order: 2; /* Move to bottom */
+    }
+    
+    .hg-content {
+        order: 1; /* Keep in middle */
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 576px) {
+    /* Further adjustments for very small screens */
+    .hg-header, .hg-footer {
+        padding: 1rem;
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="variations">
+            <h2>🎨 Layout Variations</h2>
+            
+            <div class="variation-grid">
+                <div class="variation">
+                    <h3>Sticky Header</h3>
+                    <div class="variation-demo sticky-header">
+                        <div class="demo-header">Fixed Header</div>
+                        <div class="demo-body">
+                            <div class="demo-nav">Nav</div>
+                            <div class="demo-content">Content</div>
+                            <div class="demo-sidebar">Sidebar</div>
+                        </div>
+                        <div class="demo-footer">Footer</div>
+                    </div>
+                    <div class="variation-code">
+                        <pre><code>.hg-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="variation">
+                    <h3>Sidebar First Mobile</h3>
+                    <div class="variation-demo sidebar-first">
+                        <div class="demo-header">Header</div>
+                        <div class="demo-body">
+                            <div class="demo-nav">Nav</div>
+                            <div class="demo-content">Content</div>
+                            <div class="demo-sidebar">Sidebar</div>
+                        </div>
+                        <div class="demo-footer">Footer</div>
+                    </div>
+                    <div class="variation-code">
+                        <pre><code>@media (max-width: 768px) {
+    .hg-nav { order: -1; }
+    .hg-content { order: 0; }
+    .hg-sidebar { order: 1; }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="variation">
+                    <h3>Equal Height Columns</h3>
+                    <div class="variation-demo equal-height">
+                        <div class="demo-header">Header</div>
+                        <div class="demo-body">
+                            <div class="demo-nav">Nav</div>
+                            <div class="demo-content">Content</div>
+                            <div class="demo-sidebar">Sidebar</div>
+                        </div>
+                        <div class="demo-footer">Footer</div>
+                    </div>
+                    <div class="variation-code">
+                        <pre><code>.hg-body {
+    display: flex;
+    align-items: stretch; /* Equal height */
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="variation">
+                    <h3>Nested Flexbox</h3>
+                    <div class="variation-demo nested">
+                        <div class="demo-header">Header</div>
+                        <div class="demo-body">
+                            <div class="demo-nav">Nav</div>
+                            <div class="demo-content">
+                                <div class="nested-item">Item 1</div>
+                                <div class="nested-item">Item 2</div>
+                                <div class="nested-item">Item 3</div>
+                            </div>
+                            <div class="demo-sidebar">Sidebar</div>
+                        </div>
+                        <div class="demo-footer">Footer</div>
+                    </div>
+                    <div class="variation-code">
+                        <pre><code>.hg-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nested-item {
+    flex: 1 1 200px;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-practices">
+            <h2>✅ Best Practices</h2>
+            
+            <div class="practices-grid">
+                <div class="practice">
+                    <h4>Use min-height: 100vh</h4>
+                    <p>Ensures the layout fills the entire viewport height, even with minimal content.</p>
+                </div>
+                <div class="practice">
+                    <h4>Set flex-basis on sidebars</h4>
+                    <p>Use flex: 0 0 [width] to prevent sidebars from growing or shrinking.</p>
+                </div>
+                <div class="practice">
+                    <h4>Use flex: 1 for content</h4>
+                    <p>Allows the main content to take up all available space between sidebars.</p>
+                </div>
+                <div class="practice">
+                    <h4>Consider mobile-first</h4>
+                    <p>Start with a single column layout and add complexity for larger screens.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="lesson-nav">
+        <a href="../card-layouts/index.html" class="prev-btn">← Previous: Card Layouts</a>
+        <a href="../media-objects/index.html" class="next-btn">Next: Media Objects →</a>
+    </nav>
+
+    <script>
+        function updateLayout(layout) {
+            const container = document.getElementById('holyGrailContainer');
+            
+            // Remove existing classes
+            container.classList.remove('desktop-layout', 'tablet-layout', 'mobile-layout');
+            
+            // Add selected layout class
+            container.classList.add(`${layout}-layout`);
+        }
+        
+        function updateSidebarWidth(side, value) {
+            const sidebar = document.getElementById(`${side}Sidebar`);
+            const valueSpan = document.getElementById(`${side}WidthValue`);
+            
+            sidebar.style.flexBasis = `${value}px`;
+            valueSpan.textContent = `${value}px`;
+        }
+        
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Find the clicked button by its onclick attribute
+            document.querySelector(`.tab-btn[onclick*="${tabId}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
