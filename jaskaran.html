@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook - Log in or Sign up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "facebook-blue": "#1877f2",
+              "facebook-green": "#42b883",
+              "facebook-gray": "#f0f2f5",
+              "facebook-dark-gray": "#65676b",
+              "facebook-text": "#1c1e21",
+            },
+            fontFamily: {
+              facebook: [
+                "SF Pro Display",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .facebook-gradient {
+        background: linear-gradient(135deg, #1877f2 0%, #42b883 100%);
+      }
+      .input-focus:focus {
+        border-color: #1877f2;
+        box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+      }
+      .btn-hover:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .btn-hover:active {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-facebook-gray font-facebook">
+    <div class="min-h-screen flex">
+      <!-- Left Side - Branding and Description -->
+      <div class="flex-1 flex flex-col justify-center px-8 lg:px-16 xl:px-24">
+        <div class="max-w-md">
+          <div class="mb-8">
+            <h1 class="text-5xl font-bold text-facebook-blue mb-2">facebook</h1>
+            <p class="text-xl text-facebook-text leading-relaxed">
+              Facebook helps you connect and share with the people in your life.
+            </p>
+          </div>
+
+          <!-- Features List -->
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-facebook-blue rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
+                  />
+                </svg>
+              </div>
+              <span class="text-facebook-text"
+                >Connect with friends and family</span
+              >
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-facebook-green rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="text-facebook-text">Share your life moments</span>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-facebook-blue rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="text-facebook-text">Discover new communities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Login Form -->
+      <div class="flex-1 flex items-center justify-center px-8 lg:px-16">
+        <div class="w-full max-w-md">
+          <!-- Login Card -->
+          <div class="bg-white rounded-lg shadow-lg p-6 mb-4">
+            <form class="space-y-4">
+              <!-- Email/Phone Input -->
+              <div>
+                <input
+                  type="text"
+                  placeholder="Email or phone number"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200 text-lg"
+                />
+              </div>
+
+              <!-- Password Input -->
+              <div>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200 text-lg"
+                />
+              </div>
+
+              <!-- Login Button -->
+              <button
+                type="submit"
+                class="w-full bg-facebook-blue text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-all duration-200 btn-hover"
+              >
+                Log In
+              </button>
+
+              <!-- Forgot Password Link -->
+              <div class="text-center">
+                <a href="#" class="text-facebook-blue hover:underline text-sm">
+                  Forgotten password?
+                </a>
+              </div>
+
+              <!-- Divider -->
+              <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                  <span class="px-2 bg-white text-facebook-dark-gray">or</span>
+                </div>
+              </div>
+
+              <!-- Create Account Button -->
+              <button
+                type="button"
+                class="w-full bg-facebook-green text-white py-3 rounded-lg font-semibold text-lg hover:bg-green-600 transition-all duration-200 btn-hover"
+              >
+                Create New Account
+              </button>
+            </form>
+          </div>
+
+          <!-- Create Page Link -->
+          <div class="text-center">
+            <p class="text-sm text-facebook-text">
+              <a href="#" class="font-semibold hover:underline"
+                >Create a Page</a
+              >
+              for a celebrity, brand or business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-4">
+      <div class="max-w-6xl mx-auto px-8">
+        <div
+          class="flex flex-wrap items-center justify-between text-sm text-facebook-dark-gray"
+        >
+          <div class="flex flex-wrap space-x-4 mb-2">
+            <a href="#" class="hover:underline">English (US)</a>
+            <a href="#" class="hover:underline">Español</a>
+            <a href="#" class="hover:underline">Français (France)</a>
+            <a href="#" class="hover:underline">中文(简体)</a>
+            <a href="#" class="hover:underline">العربية</a>
+            <a href="#" class="hover:underline">Português (Brasil)</a>
+            <a href="#" class="hover:underline">Italiano</a>
+            <a href="#" class="hover:underline">한국어</a>
+            <a href="#" class="hover:underline">Deutsch</a>
+            <a href="#" class="hover:underline">हिन्दी</a>
+            <a href="#" class="hover:underline">日本語</a>
+          </div>
+
+          <div class="flex flex-wrap space-x-4 mb-2">
+            <a href="#" class="hover:underline">Sign Up</a>
+            <a href="#" class="hover:underline">Log In</a>
+            <a href="#" class="hover:underline">Messenger</a>
+            <a href="#" class="hover:underline">Facebook Lite</a>
+            <a href="#" class="hover:underline">Watch</a>
+            <a href="#" class="hover:underline">Places</a>
+            <a href="#" class="hover:underline">Games</a>
+            <a href="#" class="hover:underline">Marketplace</a>
+            <a href="#" class="hover:underline">Meta Pay</a>
+            <a href="#" class="hover:underline">Oculus</a>
+            <a href="#" class="hover:underline">Portal</a>
+            <a href="#" class="hover:underline">Instagram</a>
+            <a href="#" class="hover:underline">Bulletin</a>
+            <a href="#" class="hover:underline">Local</a>
+          </div>
+
+          <div class="flex flex-wrap space-x-4">
+            <a href="#" class="hover:underline">Fundraisers</a>
+            <a href="#" class="hover:underline">Services</a>
+            <a href="#" class="hover:underline">Voting Information Center</a>
+            <a href="#" class="hover:underline">Privacy Policy</a>
+            <a href="#" class="hover:underline">Privacy Center</a>
+            <a href="#" class="hover:underline">Groups</a>
+            <a href="#" class="hover:underline">About</a>
+            <a href="#" class="hover:underline">Create Ad</a>
+            <a href="#" class="hover:underline">Create Page</a>
+            <a href="#" class="hover:underline">Developers</a>
+            <a href="#" class="hover:underline">Careers</a>
+            <a href="#" class="hover:underline">Cookies</a>
+            <a href="#" class="hover:underline">Ad Choices</a>
+            <a href="#" class="hover:underline">Terms</a>
+            <a href="#" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline"
+              >Contact Uploading & Non-Users</a
+            >
+          </div>
+
+          <div class="w-full mt-4 text-center">
+            <p class="text-xs text-facebook-dark-gray">Meta © 2024</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Add some interactive functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const inputs = document.querySelectorAll("input");
+        const buttons = document.querySelectorAll("button");
+
+        // Add focus effects to inputs
+        inputs.forEach((input) => {
+          input.addEventListener("focus", function () {
+            this.parentElement.classList.add(
+              "ring-2",
+              "ring-facebook-blue",
+              "ring-opacity-20"
+            );
+          });
+
+          input.addEventListener("blur", function () {
+            this.parentElement.classList.remove(
+              "ring-2",
+              "ring-facebook-blue",
+              "ring-opacity-20"
+            );
+          });
+        });
+
+        // Add click effects to buttons
+        buttons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Create ripple effect
+            const ripple = document.createElement("span");
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + "px";
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+            ripple.classList.add("ripple");
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          });
+        });
+      });
+    </script>
+
+    <style>
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+      }
+
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+    </style>
+  </body>
+</html>

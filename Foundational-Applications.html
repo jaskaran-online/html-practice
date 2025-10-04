@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundational Applications</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .foundation-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: aqua;
+      }
+      .header-titles {
+        text-align: center;
+      }
+      .header-titles > h2 {
+        font-size: 16px;
+        margin-top: 5px;
+        font-weight: normal;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background-color: white;
+        padding: 20px 30px;
+        border-radius: 5px;
+        border: 2px solid silver;
+      }
+
+      .card:hover {
+        scale: 1.1;
+        transition: 0.5s all;
+        box-shadow: 12px 12px 10px gray;
+      }
+
+      .card h1 {
+        color: blue;
+      }
+
+      .card h2 {
+        color: teal;
+        font-size: medium;
+        font-weight: lighter;
+      }
+
+      .card p {
+        font-size: larger;
+      }
+
+      .card ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .card ul li {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .card a {
+        background-color: teal;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 2px solid black;
+        width: 200px;
+        margin: auto;
+        margin-top: 30px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .card:hover a {
+        background-color: blue;
+        color: white;
+      }
+      .card > .icon {
+        font-size: 50px;
+      }
+      .cards-container {
+        display: flex;
+        gap: 20px;
+        margin: 20px 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="foundation-container">
+      <div>
+        <div class="header-titles">
+          <h1>Foundational Applications</h1>
+          <h2>Three core applications transforming digital security</h2>
+        </div>
+        <!-- Cards section -->
+        <div class="cards-container">
+          <!-- card1 -->
+          <div class="card">
+            <div class="icon">📁</div>
+            <h1>DocuID™</h1>
+            <h2>Secure Document Access Control</h2>
+            <p>
+              Authors embed authorized recipients (via mobile #) in encrypted
+              documents.
+            </p>
+            <ul>
+              <li>
+                <div>✅</div>
+                <p>
+                  Recipients verify identity via multi-factor authentication
+                </p>
+              </li>
+              <li>
+                <div>✅</div>
+                <p>Full Digital Rights Management (DRM)</p>
+              </li>
+              <li>
+                <div>✅</div>
+                <p>Prevents forwarding, printing, screenshots</p>
+              </li>
+            </ul>
+
+            <a href="#"> Learn More </a>
+          </div>
+
+          <!-- card2 -->
+          <div class="card">
+            <div class="icon">📁</div>
+            <h1>On-Demand ID™</h1>
+            <h2>Combatting Social Engineering & Deepfakes</h2>
+            <p>Real-time identity verification within our mobile app.</p>
+            <ul>
+              <li>
+                <div>✅</div>
+                <p>Instantly verify identity of suspicious calls/messages</p>
+              </li>
+              <li>
+                <div>✅</div>
+                <p>Biometrics, registered device and location</p>
+              </li>
+              <li>
+                <div>✅</div>
+                <p>
+                  The only solution worldwide to truly defeat deepfake & social
+                  engineering attacks
+                </p>
+              </li>
+            </ul>
+
+            <a href="#"> Learn More </a>
+          </div>
+
+          <!-- card3 -->
+          <div class="card">
+            <div class="icon">📁</div>
+            <h1>DocuID™</h1>
+            <h2>Secure Document Access Control</h2>
+            <p>
+              Authors embed authorized recipients (via mobile #) in encrypted
+              documents.
+            </p>
+            <ul>
+              <li>
+                <div>✅</div>
+                <p>
+                  Recipients verify identity via multi-factor authentication
+                </p>
+              </li>
+              <li>
+                <div>✅</div>
+                <p>Full Digital Rights Management (DRM)</p>
+              </li>
+              <li>
+                <div>✅</div>
+                <p>Prevents forwarding, printing, screenshots</p>
+              </li>
+            </ul>
+
+            <a href="#"> Learn More </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
