@@ -1,0 +1,41 @@
+TEST CASE 1: Valid Input
+
+const validGrades = [
+    { subject: "Mathematics", score: 95 },
+    { subject: "Physics", score: 87 },
+    { subject: "Chemistry", score: 92 },
+    { subject: "Biology", score: 88 }
+];
+
+TEST CASE 2: Mixed Valid/Invalid 
+
+const mixedGrades = [
+    { subject: "Math", score: 95 },
+    { subject: "", score: 80 },           // Invalid: empty subject
+    { subject: "Physics", score: 150 },   // Invalid: score out of range
+    "Not an object",                      // Invalid: not an object
+    { subject: "Chemistry" },             // Invalid: missing score
+    { subject: "Biology", score: "85" },  // Invalid: score not a number
+    { subject: "History", score: 78 }     // Valid
+];
+
+Mixed Valid/Invalid
+
+TEST CASE 3: All Invalid 
+
+const allInvalid = [
+    { subject: "Math" },                  // Missing score
+    { score: 85 },                        // Missing subject
+    null,                                 // Null entry
+    [],                                   // Array entry
+    "string",                             // String entry
+    { subject: "Physics", score: -10 }    // Negative score
+];
+
+TEST CASE 4: Edge Cases
+
+const edgeCases = [
+    { subject: "   English   ", score: 90 },  // Subject with whitespace
+    { subject: "Math", score: 0 },            // Minimum valid score
+    { subject: "Science", score: 100 }        // Maximum valid score
+];
