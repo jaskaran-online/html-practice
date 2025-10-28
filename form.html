@@ -11,94 +11,97 @@
     </style>
   </head>
   <body>
-    <form action="server.php" method="post">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter your name"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" />
-      </div>
-
-      <div class="form-group">
-        <label for="phoneNumber">Phone number</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" />
-      </div>
-
-      <div class="form-group">
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age" max="2" />
-      </div>
-
-      <div class="form-group">
-        <label for="">Please select gender</label>
-
-        <div>
-          <label for="male">Male</label>
-          <input type="radio" name="gender" id="male" value="male" />
-        </div>
-
-        <div>
-          <label for="female">Female</label>
-          <input type="radio" name="gender" id="female" value="female" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="">Please select your hobbies</label>
-        <div>
-          <label for="readingbooks">Reading Books</label>
+    <fieldset>
+      <legend>Registeraion form</legend>
+      <form action="server.php" method="post">
+        <div class="form-group">
+          <label for="name">Name</label>
           <input
-            type="checkbox"
-            name="hobby"
-            id="readingbooks"
-            value="readingbooks"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
           />
         </div>
 
-        <div>
-          <label for="watchingmovies">Watching Movies</label>
+        <div class="form-group">
+          <label for="email">Email</label>
           <input
-            type="checkbox"
-            name="hobby"
-            id="watchingmovies"
-            value="watchingmovies"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
           />
         </div>
 
-        <div>
-          <label for="listeningMusic">Listening Music</label>
-          <input
-            type="checkbox"
-            name="hobby"
-            id="listeningMusic"
-            value="listeningMusic"
-          />
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
         </div>
-      </div>
 
-      <div class="form-group">
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-      </div>
-    </form>
+        <div class="form-group">
+          <label for="phoneNumber">Phone number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" />
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" max="2" />
+        </div>
+
+        <div class="form-group">
+          <label for="">Please select gender</label>
+
+          <div>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male" />
+          </div>
+
+          <div>
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="female" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="">Please select your hobbies</label>
+          <div>
+            <label for="readingbooks">Reading Books</label>
+            <input
+              type="checkbox"
+              name="hobby"
+              id="readingbooks"
+              value="readingbooks"
+            />
+          </div>
+
+          <div>
+            <label for="watchingmovies">Watching Movies</label>
+            <input
+              type="checkbox"
+              name="hobby"
+              id="watchingmovies"
+              value="watchingmovies"
+            />
+          </div>
+
+          <div>
+            <label for="listeningMusic">Listening Music</label>
+            <input
+              type="checkbox"
+              name="hobby"
+              id="listeningMusic"
+              value="listeningMusic"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </fieldset>
   </body>
 </html>

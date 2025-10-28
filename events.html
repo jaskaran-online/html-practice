@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #btn {
+        background-color: dodgerblue;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #btn3 {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="handleClickBlueButton()">Click me</button>
+    <button
+      id="btn2"
+      style="
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      "
+      onclick="handleClickGreenButton(event)"
+    >
+      Click me Here 2
+    </button>
+
+    <button id="btn3" class="btn4">Click me Here 3</button>
+
+    <button class="btn4 border bg-red-500 text-white">Click me Here 4</button>
+
+    <script>
+      // function handleClickBlueButton() {
+      //   alert("Hello World Blue Button");
+      // }
+      // function handleClickGreenButton(event) {
+      //   alert("Hello World Green Button");
+      //   console.log(event);
+      //   event.target.style.backgroundColor = "orange";
+      // }
+
+      // // Targeting the button by id
+      // let btn3 = document.getElementById("btn3");
+
+      // console.log(btn3);
+
+      // function handleClickRedButton() {
+      //   alert("Hello World Red Button");
+      // }
+
+      // // Adding an event listener to the button
+      // btn3.addEventListener("click", handleClickRedButton);
+
+      let btnsCollection = document.getElementsByClassName("btn4");
+      // let btn4 = btnsCollection[1];
+      // console.log(btnsCollection);
+
+      // btn4.addEventListener("click", () => alert("Hello World 4th Button"));
+
+      // let btnsCollection = document.getElementsByTagName("button");
+
+      console.log(btnsCollection);
+      console.log(Array.from(btnsCollection));
+      Array.from(btnsCollection).forEach((btn) => {
+        console.log(btn);
+        btn.addEventListener("click", () => alert("Hello World Button"));
+      });
+
+      // btn5.addEventListener("click", () => alert("Hello World 5th Button"));
+    </script>
+  </body>
+</html>
