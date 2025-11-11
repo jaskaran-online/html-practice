@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: red;
+      }
+      .container-2 {
+        background-color: whitesmoke;
+      }
+      .container > p {
+        color: white;
+      }
+
+      .special ~ p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>This is a paragraph inside a div</p>
+      <p>This is a paragraph inside a div</p>
+      <div>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
+          repellat, natus consequuntur ab unde rerum obcaecati ipsum illo
+          inventore nostrum doloribus ex blanditiis modi tempore veritatis sequi
+          atque fugit perspiciatis.
+        </p>
+      </div>
+    </div>
+    <div class="container-2">
+      <p class="one">one = This is a paragraph inside a div</p>
+      <p class="two special">Two = This is a paragraph inside a div</p>
+      <p class="three">Three = This is a paragraph inside a div</p>
+      <span>random content</span>
+      <p class="four">Four = This is a paragraph inside a div</p>
+    </div>
+  </body>
+</html>
