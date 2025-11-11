@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="quiz-container"></div>
+    <div class="flex justify-center items-center gap-4">
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded-md"
+        id="next-button"
+      >
+        Next
+      </button>
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded-md"
+        id="previous-button"
+      >
+        Previous
+      </button>
+    </div>
+    <script>
+      // Quiz questions in JSON format
+      const quizData = {
+        title: "General Knowledge Quiz",
+        questions: [
+          {
+            id: 1,
+            question: "What is the capital of France?",
+            options: ["London", "Berlin", "Paris", "Madrid"],
+            correctAnswer: 2,
+          },
+          {
+            id: 2,
+            question: "Which planet is known as the Red Planet?",
+            options: ["Venus", "Mars", "Jupiter", "Saturn"],
+            correctAnswer: 1,
+          },
+          {
+            id: 3,
+            question: "What is the largest ocean on Earth?",
+            options: [
+              "Atlantic Ocean",
+              "Indian Ocean",
+              "Arctic Ocean",
+              "Pacific Ocean",
+            ],
+            correctAnswer: 3,
+          },
+          {
+            id: 4,
+            question: "Who painted the Mona Lisa?",
+            options: [
+              "Vincent van Gogh",
+              "Pablo Picasso",
+              "Leonardo da Vinci",
+              "Michelangelo",
+            ],
+            correctAnswer: 2,
+          },
+          {
+            id: 5,
+            question: "What is the smallest country in the world?",
+            options: ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+            correctAnswer: 1,
+          },
+        ],
+      };
+
+      let currentIndexGlobal = 0;
+
+      const quizContainerElement = document.getElementById("quiz-container");
+      const nextButtonElement = document.getElementById("next-button");
+      const previousButtonElement = document.getElementById("previous-button");
+
+      nextButtonElement.addEventListener("click", function () {
+        if (currentIndexGlobal >= quizData.questions.length - 1) {
+          return false;
+        }
+
+        currentIndexGlobal++;
+        console.log(currentIndexGlobal);
+        showQuestion(currentIndexGlobal);
+      });
+
+      previousButtonElement.addEventListener("click", function () {
+        if (currentIndexGlobal <= 0) {
+          return false;
+        }
+        currentIndexGlobal--;
+        console.log(currentIndexGlobal);
+        showQuestion(currentIndexGlobal);
+      });
+
+      function showQuestion(currentIndex) {
+        let html = "";
+        let currentQuestion = quizData.questions[currentIndex];
+        html += `<div class="border border-gray-400 rounded-xl p-4 m-6">
+                     <h1 class="text-xl font-semibold my-4">${currentQuestion.question}</h1>`;
+
+        currentQuestion.options.forEach((option) => {
+          html += `<p class="border border-gray-200 px-4 py-2 mt-2">${option}</p>`;
+        });
+
+        html += `</div>`;
+        quizContainerElement.innerHTML = html;
+      }
+
+      showQuestion(0);
+    </script>
+  </body>
+</html>
