@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Smith - Portfolio</title>
+    <style>
+      /* --- General Styles --- */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
+      header h1 {
+        margin: 0;
+      }
+      main {
+        background-color: white;
+        padding: 40px;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+
+      /* --- STUDENT SOLUTIONS --- */
+
+      /* 
+         * Task 1.1: Style links inside header and footer.
+         * SOLUTION: We use the Descendant Selector (space).
+         * `header a` targets any <a> tag anywhere inside the <header>.
+         * `footer a` does the same for the <footer>.
+         * This is efficient and avoids adding a class to every single link.
+        */
+      header a,
+      footer a {
+        color: #4caf50;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      /* 
+         * Task 1.2: Style paragraphs inside the main content area.
+         * SOLUTION: We use the Descendant Selector (space).
+         * `.content p` targets any <p> tag that is a descendant of the element with class="content".
+         * This ensures only the main article paragraphs are styled, not others that might be added later.
+        */
+      .content p {
+        line-height: 1.7;
+      }
+
+      /* 
+         * Task 1.3: Style direct children list items in the navigation.
+         * SOLUTION: We use the Child Selector (>).
+         * `nav > ul > li` is very specific. It only selects <li> elements that are DIRECT children of a <ul>,
+         * which is itself a DIRECT child of a <nav>. This is crucial for preventing styles from
+         * accidentally applying to nested sub-menus (e.g., dropdown menus) if they were added later.
+        */
+      nav > ul > li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+
+      nav > ul {
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Alex Smith</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="content">
+        <h2>Welcome to My Portfolio</h2>
+        <p>
+          I am a passionate web developer with a love for creating clean,
+          functional, and user-friendly websites. I specialize in modern HTML,
+          CSS, and JavaScript.
+        </p>
+        <p>
+          My goal is to translate ideas into elegant digital solutions. Take a
+          look at my <a href="projects.html">projects</a> to see my work in
+          action.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2023 Alex Smith. Connect with me on <a href="#">LinkedIn</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
