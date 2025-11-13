@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form - Adjacent Sibling Selector Practice</title>
+    <style>
+      /* --- General Styles --- */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      textarea {
+        height: 120px;
+        resize: vertical;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+
+      /* ============================================
+         * PRACTICE TASKS - Adjacent Sibling Selector (+)
+         * ============================================
+         * 
+         * TASK 2.1: Add focus styles to inputs that immediately follow labels
+         * - Use the Adjacent Sibling Selector (+) to target input elements that come right after label elements
+         * - When an input is focused, add a green border color (#4caf50) and a subtle box shadow
+         * - Also apply this to textarea elements that follow labels
+         * - Hint: Use `label + input:focus` and `label + textarea:focus`
+         * 
+         * TASK 2.2: Style the success message that appears right after the form
+         * - Use the Adjacent Sibling Selector (+) to target the .success-message div that immediately follows the form
+         * - Add a border (1px solid #c3e6cb) and a slide-in animation
+         * - Hint: Use `form + .success-message`
+         * 
+         * TASK 2.3: Style buttons that immediately follow form groups
+         * - Use the Adjacent Sibling Selector (+) to target buttons that come right after .form-group elements
+         * - Make the button full width, add margin-top, and add a hover effect with transform and box-shadow
+         * - Hint: Use `.form-group + button`
+         * 
+         * Remember: The Adjacent Sibling Selector (+) only targets the IMMEDIATELY following sibling element.
+         * ============================================
+       */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our team. We'd love to hear from you!</p>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div class="success-message">
+          <strong>Success!</strong> Your message has been sent. We'll get back
+          to you soon.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

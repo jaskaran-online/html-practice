@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post - General Sibling Selector Practice</title>
+    <style>
+      /* --- General Styles --- */
+      body {
+        font-family: "Georgia", serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .blog-post {
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .blog-header {
+        text-align: center;
+        margin-bottom: 40px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 30px;
+      }
+      .blog-title {
+        font-size: 2.5em;
+        margin: 0 0 10px 0;
+        color: #2c3e50;
+      }
+      .blog-meta {
+        color: #7f8c8d;
+        font-style: italic;
+      }
+      .blog-content h2 {
+        color: #34495e;
+        border-bottom: 1px solid #bdc3c7;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      .blog-content p {
+        margin-bottom: 20px;
+      }
+      .highlight {
+        background-color: #ecf0f1;
+        padding: 20px;
+        border-left: 4px solid #3498db;
+        margin: 20px 0;
+      }
+      .note {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+      .code-example {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        margin: 20px 0;
+        overflow-x: auto;
+      }
+      .related-posts {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 2px solid #eee;
+      }
+      .related-posts h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+      .post-preview {
+        background-color: #f8f9fa;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+      }
+      .post-preview h4 {
+        margin: 0 0 10px 0;
+        color: #3498db;
+      }
+
+      /* --- STUDENT SOLUTIONS --- */
+
+      /*
+         * Task 3.1: Style all paragraphs that follow h2 headings in the blog content.
+         * SOLUTION: We use the General Sibling Selector (~).
+         * `h2 ~ p` targets ALL <p> elements that follow an <h2> and share the same parent (.blog-content).
+         * This affects multiple paragraphs after each heading, not just the immediately adjacent one.
+       */
+      .blog-content h2 ~ p {
+        text-indent: 20px;
+        color: #2c3e50;
+      }
+
+      /*
+         * Task 3.2: Style all highlight boxes that follow h2 headings.
+         * SOLUTION: We use the General Sibling Selector (~).
+         * `h2 ~ .highlight` targets ALL .highlight elements that follow <h2> elements.
+         * This creates visual breaks and emphasizes important content throughout the article.
+       */
+      .blog-content h2 ~ .highlight {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+      }
+
+      /*
+         * Task 3.3: Style all code examples that follow h2 headings.
+         * SOLUTION: We use the General Sibling Selector (~).
+         * `h2 ~ .code-example` targets ALL .code-example elements that come after <h2> elements.
+         * This ensures all code blocks in the content area get consistent styling.
+       */
+      .blog-content h2 ~ .code-example {
+        font-size: 14px;
+        line-height: 1.4;
+        border-left: 4px solid #e74c3c;
+      }
+
+      /*
+         * Task 3.4: Style all post previews that follow the "Related Posts" heading.
+         * SOLUTION: We use the General Sibling Selector (~).
+         * `h3 ~ .post-preview` targets ALL .post-preview elements that follow the <h3> "Related Posts".
+         * This creates a uniform appearance for all related post items.
+       */
+      .related-posts h3 ~ .post-preview {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .related-posts h3 ~ .post-preview:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /*
+         * Task 3.5: Style note boxes that follow h2 headings but not other notes.
+         * SOLUTION: We use the General Sibling Selector (~).
+         * `h2 ~ .note` targets .note elements that follow h2 headings anywhere in the content.
+         * This allows for contextual styling based on section headers.
+       */
+      .blog-content h2 ~ .note {
+        position: relative;
+      }
+
+      .blog-content h2 ~ .note::before {
+        content: "💡";
+        position: absolute;
+        left: -30px;
+        top: 15px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <article class="blog-post">
+        <header class="blog-header">
+          <h1 class="blog-title">Mastering CSS Combinator Selectors</h1>
+          <p class="blog-meta">
+            By Arun Kumar • Published on November 13, 2025 • 8 min read
+          </p>
+        </header>
+
+        <div class="blog-content">
+          <h2>Introduction to Combinators</h2>
+          <p>
+            CSS combinator selectors allow you to style elements based on their
+            relationship with other elements in the DOM tree.
+          </p>
+
+          <div class="highlight">
+            <p>
+              Combinators are powerful tools that help you write more specific
+              and maintainable CSS code.
+            </p>
+          </div>
+
+          <h2>The Descendant Selector</h2>
+          <p>
+            The descendant selector targets any element that is a descendant of
+            another element.
+          </p>
+
+          <div class="code-example">.container p { color: blue; }</div>
+
+          <h2>The Child Selector</h2>
+          <p>The child selector targets direct children of an element.</p>
+
+          <div class="code-example">.container > p { font-weight: bold; }</div>
+
+          <div class="note">
+            <p>
+              Remember that child selectors only work for direct children, not
+              grandchildren or deeper descendants.
+            </p>
+          </div>
+
+          <h2>Adjacent Sibling Selector</h2>
+          <p>
+            This selector targets elements that immediately follow another
+            element.
+          </p>
+
+          <div class="code-example">h2 + p { margin-top: 0; }</div>
+
+          <h2>General Sibling Selector</h2>
+          <p>
+            The general sibling selector is similar to the adjacent sibling but
+            targets all siblings that follow, not just the immediate one.
+          </p>
+
+          <div class="code-example">h2 ~ p { line-height: 1.8; }</div>
+
+          <div class="highlight">
+            <p>
+              Practice these selectors to become proficient in writing efficient
+              CSS.
+            </p>
+          </div>
+        </div>
+
+        <section class="related-posts">
+          <h3>Related Posts</h3>
+
+          <div class="post-preview">
+            <h4>CSS Grid vs Flexbox</h4>
+            <p>
+              Learn when to use CSS Grid and when Flexbox is more appropriate
+              for your layouts.
+            </p>
+          </div>
+
+          <div class="post-preview">
+            <h4>Modern CSS Techniques</h4>
+            <p>
+              Explore the latest CSS features that are changing how we build web
+              interfaces.
+            </p>
+          </div>
+
+          <div class="post-preview">
+            <h4>Responsive Design Patterns</h4>
+            <p>
+              Common patterns and techniques for creating responsive web
+              designs.
+            </p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form - Adjacent Sibling Selector Practice</title>
+    <style>
+      /* --- General Styles --- */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      textarea {
+        height: 120px;
+        resize: vertical;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+
+      /* --- STUDENT SOLUTIONS --- */
+
+      /*
+         * Task 2.1: Add focus styles to inputs that immediately follow labels.
+         * SOLUTION: We use the Adjacent Sibling Selector (+).
+         * `label + input` targets any <input> element that immediately follows a <label>.
+         * This ensures only form inputs get the focus style, not other inputs that might be added later.
+       */
+      label + input:focus,
+      label + textarea:focus {
+        border-color: #4caf50;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        outline: none;
+      }
+
+      /*
+         * Task 2.2: Style the success message that appears right after the form.
+         * SOLUTION: We use the Adjacent Sibling Selector (+).
+         * `form + .success-message` targets the .success-message div that immediately follows a <form>.
+         * This creates a nice visual separation and ensures the message appears connected to the form.
+       */
+      form + .success-message {
+        border: 1px solid #c3e6cb;
+        animation: slideIn 0.3s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /*
+         * Task 2.3: Style buttons that immediately follow form groups.
+         * SOLUTION: We use the Adjacent Sibling Selector (+).
+         * `.form-group + button` targets any <button> that immediately follows a .form-group.
+         * This ensures the submit button gets special styling when it's the last form group.
+       */
+      .form-group + button {
+        margin-top: 10px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .form-group + button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our team. We'd love to hear from you!</p>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div class="success-message">
+          <strong>Success!</strong> Your message has been sent. We'll get back
+          to you soon.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
