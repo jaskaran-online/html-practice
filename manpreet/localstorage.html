@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <button id="removeItemButton">Remove Item</button>
+    <button id="clearAllItemsButton">Clear All Items</button>
+
+    <script>
+      let removeItemButtonElement = document.getElementById("removeItemButton");
+
+      let clearAllItemsButtonElement = document.getElementById(
+        "clearAllItemsButton"
+      );
+
+      removeItemButtonElement.addEventListener("click", function () {
+        localStorage.removeItem("name");
+      });
+
+      clearAllItemsButtonElement.addEventListener("click", function () {
+        localStorage.clear();
+      });
+
+      let user = {
+        name: "jaskaran",
+        state: "panjab",
+      };
+
+      let users = [
+        { name: "jaskaran", state: "panjab" },
+        { name: "manpreet", state: "panjab" },
+      ];
+
+      let userString = JSON.stringify(user);
+
+      console.log(user, userString);
+
+      console.log("hello");
+      localStorage.setItem("name", "manpreet");
+      localStorage.setItem("location", "canada");
+      localStorage.setItem("user", userString);
+      localStorage.setItem("usersArray", JSON.stringify(users));
+
+      let itemReceivedFromLocalStorage = localStorage.getItem("user");
+      console.log(typeof itemReceivedFromLocalStorage);
+      console.log(itemReceivedFromLocalStorage);
+
+      let itemReceivedFromLocalStorageButParsed = JSON.parse(
+        itemReceivedFromLocalStorage
+      );
+
+      console.log(itemReceivedFromLocalStorageButParsed);
+
+      /**
+       * localstorage is a web storage API that allows you to store data in the browser. It is a key-value store.
+       * ----------------------------------------------------------------------------------------------------------------
+       *
+       * getItem -> get the value of a key it returns a string
+       * @param {string} key - the key to get the value of
+       * @returns {string} - the value of the key
+       * ----------------------------------------------------------------------------------------------------------------
+       *
+       * setItem -> set the value of a key it takes a key and a value and returns void
+       * @param {string} key - the key to set the value of
+       * @param {string} value - the value to set
+       * @returns {void}
+       * ----------------------------------------------------------------------------------------------------------------
+       *
+       * removeItem -> remove the value of a key it takes a key and returns void
+       * @param {string} key - the key to remove the value of
+       * @returns {void}
+       * ----------------------------------------------------------------------------------------------------------------
+       *
+       * clear -> remove all keys and values it returns void
+       * @returns {void}
+       * ----------------------------------------------------------------------------------------------------------------
+       *
+       * JSON.stringify , JSON.parse -> convert a JavaScript object into a string and vice versa
+       * @param {object} object - the object to convert into a string
+       * @returns {string} - the string representation of the object
+       * ----------------------------------------------------------------------------------------------------------------
+       *
+       * JSON.parse -> convert a string into a JavaScript object
+       * @param {string} string - the string to convert into a JavaScript object
+       * @returns {object} - the JavaScript object representation of the string
+       * */
+    </script>
+  </body>
+</html>

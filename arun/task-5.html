@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding CSS Grid - DevDiary</title>
+    <style>
+      /* --- General & Copied Styles --- */
+      body {
+        font-family: Georgia, serif;
+        line-height: 1.6;
+        margin: 0;
+        background-color: #fdfdfd;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header,
+      footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 1rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+      main {
+        padding: 20px 0;
+      }
+      a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      nav > ul > li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+      nav > ul {
+        padding: 0;
+      }
+      .comment {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+      }
+      .comment strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* --- STUDENT SOLUTIONS --- */
+
+      /* Task 2.1: Style direct child h3 elements within the article */
+      /* Hint: Use the Child Selector (>) */
+      article > h3 {
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+
+      /* Task 2.2: Style comments that come after the OP's comment */
+      /* Hint: Use the General Sibling Selector (~) */
+      .op-comment ~ .comment {
+        background-color: rgba(200, 200, 200, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>DevDiary</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="post.html">Sample Post</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <article>
+        <h1>Understanding CSS Grid</h1>
+        <p>CSS Grid is a powerful two-dimensional layout system...</p>
+
+        <h3>What is CSS Grid?</h3>
+        <p>
+          Grid allows you to create complex responsive web layouts... It works
+          by turning an element into a grid container with `display: grid`.
+        </p>
+
+        <blockquote>
+          <p>
+            "Grid is the very first CSS module created specifically to solve the
+            layout problems we’ve all been hacking our way around for as long as
+            we’ve been making websites."
+          </p>
+          <p>- Chris Coyier, CSS-Tricks</p>
+        </blockquote>
+
+        <h3>Defining a Grid</h3>
+        <p>
+          To define a grid, you use the `grid-template-columns` and
+          `grid-template-rows` properties...
+        </p>
+      </article>
+
+      <section class="comments">
+        <h2>Comments</h2>
+        <div class="comment op-comment">
+          <strong>Alex (Post Author)</strong>
+          <p>
+            Great to see this post published! Let me know what you think in the
+            comments.
+          </p>
+        </div>
+        <div class="comment">
+          <strong>Jane Doe</strong>
+          <p>
+            This is a fantastic introduction! The examples really helped clarify
+            the concepts.
+          </p>
+        </div>
+        <div class="comment">
+          <strong>John Smith</strong>
+          <p>
+            I'm still a bit confused about the difference between `grid-gap` and
+            `gap`. Can you elaborate?
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 DevDiary. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
